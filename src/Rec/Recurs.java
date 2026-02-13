@@ -1,5 +1,7 @@
 package Rec;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Recurs {
@@ -53,17 +55,40 @@ public class Recurs {
         if(m%n==0) return n;
         return hcf(m%n,n);
     }
-
-
+    public static void printSubsets(String ans,String s,int idx,List<String> list){
+      if (idx==s.length()){
+          if (!ans.isEmpty())list.add(ans);   // to  remove the empty string
+          return;
+      }
+      char ch = s.charAt(idx);
+      printSubsets(ans+ch,s,idx+1,list);
+      printSubsets(ans,s,idx+1,list);
+    }
+    public static void
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
+        String s = "abc";
+        List<String> list = new ArrayList<>();
+        printSubsets("",s,0,list);
+
+
+
+
+
+
+
+
+
+
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
 //        nto1(n);
 //        OneToNMethod1(1,n);
 //        onetonmethod2(n);
 //        System.out.println(araisedb(n,m));
 //        revbyloop(n);
-        System.out.println(hcf(n,m));
+//        System.out.println(hcf(n,m));
+
+
     }
 }

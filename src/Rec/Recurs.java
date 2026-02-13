@@ -64,7 +64,6 @@ public class Recurs {
       printSubsets(ans+ch,s,idx+1,list);
       printSubsets(ans,s,idx+1,list);
     }
-    public static void
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = "abc";

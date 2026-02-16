@@ -15,6 +15,20 @@ public class Questions {
         }
         return true;
     }
+    public static int mostFrequentCharacterMehod1(String s){
+        char ans=s.charAt(0);
+        int maxFreq=-1;
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i+1; j < s.length(); j++) {
+                if (s.charAt(i)==s.charAt(j)){
+                    maxFreq++;
+                    ans=s.charAt(maxFreq);
+                }
+            }
+
+        }
+        return ans;
+    }
 
     public static void main(String[] args) {
         System.out.println(anagram("race","rcer"));

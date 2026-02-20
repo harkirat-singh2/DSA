@@ -26,8 +26,26 @@ public class Triangles {
             System.out.println();
         }
     }
+    public static void alternatealphabetSquare(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi, Simailar row print kregi eg=aaaa
+            for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga , different row print kregi eg=1234
+                if (i%2!=0)System.out.print((char)(i+96)+" ");
+                if (i%2==0)System.out.print((char)(i+64)+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void alphanumericTriangle(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi, Simailar row print kregi eg=aaaa
+            for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga , different row print kregi eg=1234
+                if (i%2!=0)System.out.print((j)+" ");
+                if (i%2==0)System.out.print((char)(j+64)+" ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
-    alphabetSquare(5);
+    alphanumericTriangle(5);
     }
 }

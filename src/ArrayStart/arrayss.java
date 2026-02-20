@@ -40,10 +40,8 @@ public class arrayss {
         if (array == null || array.length == 0) {
             return -1;
         }
-
         int start = 0;
         int end = array.length - 1;
-
         while (start <= end) {
             int mid = start + (end - start) / 2; // Avoid potential integer overflow
             if (array[mid] == key) {
@@ -111,7 +109,6 @@ public class arrayss {
 //            arr[j]=temp;
 //            i++;
 //            j--;
-//        }
         for (int i = 0; i < n / 2; i++) {
             int temp = arr[i];
            arr[i]=arr[n-i-1];

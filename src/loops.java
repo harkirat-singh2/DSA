@@ -79,8 +79,23 @@ public class loops {
         }
         return rev;
     }
-
+    public static int factorial(int n){
+        int fact =1;
+        while (n!=1){
+            fact=n*fact;
+            n--;
+        }
+        return fact;
+    }
+    public static int araisedb(int a,int b){
+        int num =1;
+        while (b>0){
+            num *=a;
+            b--;
+        }
+        return num;
+    }
     public static void main(String[] args) {
-        System.out.println(revOfNum(61234));
+        System.out.println(araisedb(5,2));
     }
 }

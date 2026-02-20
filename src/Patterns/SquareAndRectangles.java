@@ -1,4 +1,6 @@
-public class patterns {
+package Patterns;
+
+public class SquareAndRectangles {
     public static void rectangle(int n,int m){
         for (int i = 0; i < n; i++) { // Kitni lines Hogi
             for (int j = 0; j < m; j++) {  //Har lines mein kitna print hoga
@@ -31,7 +33,33 @@ public class patterns {
             System.out.println();
         }
     }
+    public static void numbersquare2(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi
+            for (int j = 1; j <= n; j++) {  //Har lines mein kitna print hoga
+                System.out.print(i+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void alphabetSquare2(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi
+            for (int j = 1; j <= n; j++) {  //Har lines mein kitna print hoga
+                System.out.print((char)(i+64)+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void alternatealphabetSquare(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi
+            for (int j = 1; j <= n; j++) {  //Har lines mein kitna print hoga
+                if (i%2!=0)System.out.print((char)(i+96)+" ");
+                if (i%2==0)System.out.print((char)(i+64)+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-        alphabetSquare(6);
+        alternatealphabetSquare(4);
     }
 }

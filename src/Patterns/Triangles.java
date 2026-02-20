@@ -9,7 +9,25 @@ public class Triangles {
             System.out.println();
         }
     }
+
+    public static void numbertriangle(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi
+            for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga
+                System.out.print(j+" ");
+            }
+            System.out.println();
+        }
+    }
+    public static void alphabetSquare(int n){
+        for (int i = 1; i <= n; i++) { // Kitni lines Hogi
+            for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga
+                System.out.print((char)(j+64)+" ");
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
-    triangle(5);
+    alphabetSquare(5);
     }
 }

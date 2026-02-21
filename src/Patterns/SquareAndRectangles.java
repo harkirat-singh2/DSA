@@ -60,6 +60,6 @@ public class SquareAndRectangles {
     }
 
     public static void main(String[] args) {
-        alternatealphabetSquare(4);
+        alphabetSquare2(4);
     }
 }

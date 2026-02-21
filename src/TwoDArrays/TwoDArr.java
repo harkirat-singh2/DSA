@@ -108,6 +108,7 @@ public class TwoDArr {
             System.out.println();
         }
     }
+
     public static void main(String[] args) {
         printArrayColumnWise(3,4);
     }

@@ -18,7 +18,7 @@ public class Triangles {
             System.out.println();
         }
     }
-    public static void alphabetSquare(int n){
+    public static void alphabetTriangle(int n){
         for (int i = 1; i <= n; i++) { // Kitni lines Hogi
             for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga
                 System.out.print((char)(j+64)+" ");
@@ -26,7 +26,7 @@ public class Triangles {
             System.out.println();
         }
     }
-    public static void alternatealphabetSquare(int n){
+    public static void alternatealphabetTriangle(int n){
         for (int i = 1; i <= n; i++) { // Kitni lines Hogi, Simailar row print kregi eg=aaaa
             for (int j = 1; j <= i; j++) {  //Har lines mein kitna print hoga , different row print kregi eg=1234
                 if (i%2!=0)System.out.print((char)(i+96)+" ");
@@ -46,6 +46,6 @@ public class Triangles {
     }
 
     public static void main(String[] args) {
-    alphanumericTriangle(5);
+    alternatealphabetTriangle(5);
     }
 }

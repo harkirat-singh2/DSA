@@ -69,6 +69,8 @@ public class HarizontallyFlippedTriangles {
         }
     }
     public static void main(String[] args) {
+        diffMethodNumericflippedtriangle(5);
+        diffMethodflippedtriangle(5);
         alternatealphabetFlippedTriangle(5);
     }
 }

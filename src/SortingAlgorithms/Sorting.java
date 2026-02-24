@@ -84,6 +84,21 @@ public class Sorting {
             if (swap==0) break;
         }
     }
+//    public static void moveZeroesSlidingWindow(int[] arr) {
+//        int n = arr.length;
+//        int swap = 0;
+//        for (int i = 0; i < n - 1; i++) {          // passes
+//            for (int j = 0; j < n - i -1 ; j++) {  // comparisons
+//                if (arr[j] ==0) {         // correct indices
+//                    int temp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = temp;
+//                    swap++;
+//                }
+//            }
+//            if (swap==0) break;
+//        }
+//    }
     public static void print (int[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");

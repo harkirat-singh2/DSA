@@ -69,6 +69,21 @@ public class Sorting {
             if (swap == 0) break;
         }
     }
+    public static void moveZeroes(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {          // passes
+            int swap = 0;
+            for (int j = 0; j < n - i -1 ; j++) {  // comparisons
+                if (arr[j] ==0) {         // correct indices
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swap++;
+                }
+            }
+            if (swap==0) break;
+        }
+    }
     public static void print (int[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
@@ -76,10 +91,8 @@ public class Sorting {
         System.out.println();
     }
     public static void main(String[] args) {
-    int[] arr ={1,2,8,-4,6,5,3,-2,-9,4};
-    bubbleSortOptimized(arr);
-    print(arr);
-    bubbleSortOptimizedSwapDesc(arr);
+    int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
+    moveZeroes(arr);
     print(arr);
 
     }

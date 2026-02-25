@@ -25,7 +25,6 @@ public class Questions {
                     ans=s.charAt(maxFreq);
                 }
             }
-
         }
         return ans;
     }

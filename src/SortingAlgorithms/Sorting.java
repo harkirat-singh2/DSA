@@ -107,7 +107,7 @@ public class Sorting {
     }
     public static void main(String[] args) {
     int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
-    moveZeroes(arr);
+    bubbleSort(arr);
     print(arr);
 
     }

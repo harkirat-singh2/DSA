@@ -1,6 +1,8 @@
 package SortingAlgorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Selection {
     public static void selectionSort(int[] arr) {
@@ -57,6 +59,25 @@ public class Selection {
         }
         return false;
     }
+    public static ArrayList<Integer> commonEl(int[] a , int[] b){
+        ArrayList<Integer> arr = new ArrayList<>();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int i = 0;
+        int j = 0;
+        while (i<a.length && j<b.length){
+            if (a[i]<b[j]) i++;
+            else if (a[i]>b[j]) j++;
+            else {
+                arr.add(a[i]);
+                i++;
+                j++;
+            }
+        }
+
+
+        return arr;
+    }
     public static void print (int[] arr){
         for (int j : arr) {
             System.out.print(j + " ");
@@ -66,6 +87,8 @@ public class Selection {
 
     public static void main(String[] args) {
         int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
-        System.out.println(twoSumSortedArray(arr,5));
+        int[] arr1 ={3,4,2,2,4};
+        int[] arr2 ={1,2};
+        System.out.println(commonEl(arr1,arr2));
     }
 }

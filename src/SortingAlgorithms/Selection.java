@@ -1,5 +1,7 @@
 package SortingAlgorithms;
 
+import java.util.Arrays;
+
 public class Selection {
     public static void selectionSort(int[] arr) {
         int n = arr.length;
@@ -43,6 +45,18 @@ public class Selection {
             arr[pos] = temp;
         }
     }
+    public static boolean twoSumSortedArray(int[] arr,int target){
+        Arrays.sort(arr);
+        int n=  arr.length;
+        int i=0;
+        int j=n-1;
+        while (i<j){
+            if ((arr[i]+arr[j])==target)return true;
+            if ((arr[i]+arr[j])>target)j--;
+            else i++;
+        }
+        return false;
+    }
     public static void print (int[] arr){
         for (int j : arr) {
             System.out.print(j + " ");
@@ -52,7 +66,6 @@ public class Selection {
 
     public static void main(String[] args) {
         int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
-        selectionSortMax(arr);
-        print(arr);
+        System.out.println(twoSumSortedArray(arr,5));
     }
 }

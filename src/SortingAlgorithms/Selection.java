@@ -78,6 +78,59 @@ public class Selection {
 
         return arr;
     }
+    public static ArrayList<Integer> union(int[] a , int[] b){
+        ArrayList<Integer> arr = new ArrayList<>();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int i = 0;
+        int j = 0;
+        while (i<a.length && j<b.length){
+            if (a[i]<b[j]) {
+                if(arr.isEmpty() || arr.getLast() != a[i]) arr.add(a[i]);
+                i++;
+            }
+            else if (a[i]>b[j]) {
+                if(arr.isEmpty() || arr.getLast() != b[j])arr.add(b[j]);
+                j++;
+            } else if (a[i]==b[j]) {
+                if(arr.isEmpty() || arr.getLast() != a[i])arr.add(a[i]);
+                i++;
+                j++;
+            }
+        }
+        while (i<a.length){
+            if(arr.isEmpty() || arr.getLast() != a[i]) arr.add(a[i]);
+            i++;
+        }
+        while (i>a.length){
+            if(arr.isEmpty() || arr.getLast() != b[j])arr.add(b[j]);
+            j++;
+        }
+        return arr;
+    }
+    public int findKthLargest(int[] nums, int k) {
+        int n = nums.length;
+
+        for (int i = 0; i < k; i++) {   // passes
+
+            int max = nums[n-i-1];
+            int pos = n-i-1;
+
+            for (int j = 0; j < n-1-i; j++) {   // search max in unsorted part
+                if (nums[j] > max) {
+                    max = nums[j];
+                    pos = j;
+                }
+            }
+
+            // swap after finding minimum
+            int temp = nums[n-1-i];
+            nums[n-1-i] = nums[pos];
+            nums[pos] = temp;
+        }
+        return nums[n-k];
+    }
+
     public static void print (int[] arr){
         for (int j : arr) {
             System.out.print(j + " ");
@@ -87,8 +140,8 @@ public class Selection {
 
     public static void main(String[] args) {
         int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
-        int[] arr1 ={3,4,2,2,4};
+        int[] arr1 ={3,4,2,2,4,9,5};
         int[] arr2 ={1,2};
-        System.out.println(commonEl(arr1,arr2));
+        System.out.println(union(arr1,arr2));
     }
 }

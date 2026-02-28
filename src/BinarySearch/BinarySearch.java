@@ -1,5 +1,9 @@
 package BinarySearch;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class BinarySearch {
     public static boolean binSearch(int[] arr,int target){
         boolean flag = false;
@@ -17,6 +21,58 @@ public class BinarySearch {
         }
         return flag;
     }
+    public static int firstOccur(int[] arr,int target){
+        int index = -1;
+        int n=arr.length;
+        int low=0 , high=n-1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]>target) {
+                high = mid-1;
+            }
+            else if (arr[mid]<target) {
+                low = mid+1;
+            }
+            else {
+                index= mid;
+                high = mid-1;
+            }
+        }
+        return index;
+    }
+    public static int[] firstAndLastOccurasc(int[] arr , int target){
+        int[] index = new int[2];
+        int n = arr.length  , low=0 , high=n-1;
+        int first= -1 , last = -1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                first= mid;
+                high = mid-1;
+            }
+            else if (arr[mid]<target) {
+                low = mid+1;
+            }
+            else {
+                high = mid-1;
+            }
+        }
+          low=0; high=n-1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                last= mid;
+                low = mid+1;
+            }
+            else if (arr[mid]<target) {
+                low = mid+1;
+            }
+            else {
+                high = mid-1;
+            }
+        }
+        return new int[]{first, last};
+    }
     public static void print(int[] arr){
         for (int el:arr){
             System.out.print(el+" ");
@@ -24,6 +80,7 @@ public class BinarySearch {
     }
     public static void main(String[] args) {
         int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,7};
-        System.out.println(binSearch(arr,7));
+        int[] arr1 = {5,7,7,8,8,10};
+        System.out.println(Arrays.toString(firstAndLastOccurasc(arr1, 7)));
     }
 }

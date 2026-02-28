@@ -73,6 +73,41 @@ public class BinarySearch {
         }
         return new int[]{first, last};
     }
+    public static ArrayList<Integer> firstAndLastOccurascArrayList(int[] arr , int target){
+        ArrayList<Integer> ans = new ArrayList<>();
+        int n = arr.length  , low=0 , high=n-1;
+        int first= -1 , last = -1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                first= mid;
+                high = mid-1;
+            }
+            else if (arr[mid]<target) {
+                low = mid+1;
+            }
+            else {
+                high = mid-1;
+            }
+        }
+        ans.add(first);
+        low=0; high=n-1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                last= mid;
+                low = mid+1;
+            }
+            else if (arr[mid]<target) {
+                low = mid+1;
+            }
+            else {
+                high = mid-1;
+            }
+        }
+        ans.add(last);
+        return ans;
+    }
     public static int[] firstAndLastOccurDesc(int[] arr , int target){
         int[] index = new int[2];
         int n = arr.length  , low=0 , high=n-1;
@@ -106,6 +141,21 @@ public class BinarySearch {
         }
         return new int[]{last, first};
     }
+    public int peakIndexInMountainArray(int[] arr) {
+        int n=arr.length;
+        int low=0 , high=n-1;
+        while (low<high){
+            int mid = (low+high)/2;
+            if(arr[mid]<arr[mid+1]){
+                low = mid + 1;
+            }
+            else{
+                high = mid;
+            }
+        }
+        return low;
+
+    }
     public static void print(int[] arr){
         for (int el:arr){
             System.out.print(el+" ");
@@ -115,5 +165,7 @@ public class BinarySearch {
         int[] arr1 = {5,7,7,8,8,10};
         int[] arr2 = {9,9,8,8,7,7,7,7,4,4,4,1,1};
         System.out.println(Arrays.toString(firstAndLastOccurDesc(arr2, 7)));
+        System.out.println(firstAndLastOccurascArrayList(arr1,8));
+
     }
 }

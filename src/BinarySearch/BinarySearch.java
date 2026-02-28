@@ -80,7 +80,7 @@ public class BinarySearch {
         while (low<=high){
             int mid = (low+high)/2;
             if (arr[mid]==target) {
-                last= mid;
+                first= mid;
                 low = mid+1;
             }
             else if (arr[mid]<target) {
@@ -94,7 +94,7 @@ public class BinarySearch {
         while (low<=high){
             int mid = (low+high)/2;
             if (arr[mid]==target) {
-                first= mid;
+                last= mid;
                 high = mid-1;
             }
             else if (arr[mid]<target) {
@@ -104,7 +104,7 @@ public class BinarySearch {
                 low = mid+1;
             }
         }
-        return new int[]{first, last};
+        return new int[]{last, first};
     }
     public static void print(int[] arr){
         for (int el:arr){

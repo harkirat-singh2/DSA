@@ -156,16 +156,32 @@ public class BinarySearch {
         return low;
 
     }
+    public static int findFloor(int[] arr, int target) {
+        // code here
+        int ans = -1;
+        int n = arr.length;
+        int low = 0 , high = n-1;
+        while(low<=high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] <= target) {
+                ans = mid;
+                low = mid + 1;
+            }
+            else if (arr[mid] > target) high = mid - 1;
+        }
+            return ans;
+        }
     public static void print(int[] arr){
         for (int el:arr){
             System.out.print(el+" ");
         }
     }
     public static void main(String[] args) {
-        int[] arr1 = {5,7,7,8,8,10};
+        int[] arr1 = {5,6,7,7,8,8,10};
         int[] arr2 = {9,9,8,8,7,7,7,7,4,4,4,1,1};
         System.out.println(Arrays.toString(firstAndLastOccurDesc(arr2, 7)));
         System.out.println(firstAndLastOccurascArrayList(arr1,8));
+        System.out.println(findFloor(arr1,9));
 
     }
 }

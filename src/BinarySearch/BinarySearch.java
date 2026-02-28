@@ -170,7 +170,21 @@ public class BinarySearch {
             else if (arr[mid] > target) high = mid - 1;
         }
             return ans;
-        }
+    }
+//    public static int maxCount(int[] arr){
+//        int pos = 0 , neg = 0;
+//        int n = arr.length;
+//        int low = 0 , high = n-1;
+//        while(low<high) {
+//            int mid = low + (high - low) / 2;
+//            if (arr[mid]>=0) {
+//               low = mid+1;
+//            }
+//
+//
+//        }
+//        return Math.max(pos,neg);
+//    }
     public static void print(int[] arr){
         for (int el:arr){
             System.out.print(el+" ");

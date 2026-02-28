@@ -73,14 +73,47 @@ public class BinarySearch {
         }
         return new int[]{first, last};
     }
+    public static int[] firstAndLastOccurDesc(int[] arr , int target){
+        int[] index = new int[2];
+        int n = arr.length  , low=0 , high=n-1;
+        int first= -1 , last = -1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                last= mid;
+                low = mid+1;
+            }
+            else if (arr[mid]<target) {
+                high = mid-1;
+            }
+            else {
+                low = mid+1;
+            }
+        }
+        low=0; high=n-1;
+        while (low<=high){
+            int mid = (low+high)/2;
+            if (arr[mid]==target) {
+                first= mid;
+                high = mid-1;
+            }
+            else if (arr[mid]<target) {
+                high = mid-1;
+            }
+            else {
+                low = mid+1;
+            }
+        }
+        return new int[]{first, last};
+    }
     public static void print(int[] arr){
         for (int el:arr){
             System.out.print(el+" ");
         }
     }
     public static void main(String[] args) {
-        int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,7};
         int[] arr1 = {5,7,7,8,8,10};
-        System.out.println(Arrays.toString(firstAndLastOccurasc(arr1, 7)));
+        int[] arr2 = {9,9,8,8,7,7,7,7,4,4,4,1,1};
+        System.out.println(Arrays.toString(firstAndLastOccurDesc(arr2, 7)));
     }
 }

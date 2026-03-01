@@ -28,5 +28,6 @@ public class Parenthesis {
         int n = 3;
         List<String> result = generateParenthesis(n);
         System.out.println(result);
+        System.out.println(result);
     }
 }

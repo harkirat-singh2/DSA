@@ -17,7 +17,7 @@ public class arrRec {
        return exists(arr ,el,idx+1);
     }
 
-        public int helper(int[] nums, int target, int lo, int hi) {
+        public static int helper(int[] nums, int target, int lo, int hi) {
             if (lo > hi) return -1; // base case
 
             int mid = lo + (hi - lo) / 2;
@@ -29,11 +29,11 @@ public class arrRec {
                 return helper(nums, target, mid + 1, hi);
         }
 
-        public int search(int[] nums, int target) {
+        public static int search(int[] nums, int target) {
             return helper(nums, target, 0, nums.length - 1);
         }
 
     public static void main(String[] args) {
         int[] arr= {1,2,3,4,54,6,4,3,5,3};
-        System.out.println(exists(arr, 7, 0));    }
+        System.out.println(exists(arr, 7,8));    }
 }

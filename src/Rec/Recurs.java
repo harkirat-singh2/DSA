@@ -25,7 +25,7 @@ public class Recurs {
         return n*fact(n-1);
     }
     public static int araisedb(int n, int m) {
-        if (m == 0) return 1;   // ✅ base case FIRST
+        if (m == 0) return 1;   // base case FIRST
 
         int call = araisedb(n, m / 2);
 

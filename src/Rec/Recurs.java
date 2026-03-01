@@ -69,6 +69,7 @@ public class Recurs {
         String s = "abc";
         List<String> list = new ArrayList<>();
         printSubsets("",s,0,list);
+        System.out.println( reverse(7,9));
 
 
 

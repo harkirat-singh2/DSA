@@ -31,10 +31,34 @@ public class MergeSort {
         }
     }
     public static void main(String[] args) {
+        int[] arr = {1,5,6,8,7,9,3,4};
         int[] a = {1,2,5,7,10};
         int[] b = {3,4,6,8,9};
         int[] c = mergingTwoSortedArr(a,b);
-
         print(c);
+        mergeSort(arr);
+        print (arr);
     }
+
+    private static void mergeSort(int[] arr) {
+        if(arr.length <= 1) return;
+        int n = arr.length;
+        //Create 2 arrays of sizen/2 each
+        int[] a = new int[n/2];
+        int[] b = new int[n-(n/2)];
+        // Step 2 : Copy-paste arr into a and b
+        int idx = 0; // idx travel karega arr pe
+        for(int i=0;i<a.length; i++)
+            a[i] = arr[idx++];
+        for(int i=0;i<b.length; i++)
+            b[i] = arr[idx++];
+        mergeSort(a);
+        mergeSort(b);
+        // Merge a and b into arr
+        int[] merged = mergingTwoSortedArr(a,b);
+
+        System.arraycopy(merged, 0, arr, 0, arr.length);
+
+    }
+
 }

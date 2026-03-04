@@ -35,7 +35,6 @@ public class MergeSort {
         int[] a = {1,2,5,7,10};
         int[] b = {3,4,6,8,9};
         int[] c = mergingTwoSortedArr(a,b);
-        print(c);
         mergeSort(arr);
         print (arr);
     }

@@ -46,7 +46,28 @@ public class MergeSort {
         System.arraycopy(merged, 0, arr, 0, arr.length);
 
     }
-
+    public static int inversionCount(int[] arr){
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i] >arr[j]){
+                    count++;    //T.c -> O(n sq2)
+                }
+            }
+        }
+        return count;
+    }
+    public static int inversionCountMergeSort(int[] arr){
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i+1; j < arr.length; j++) {
+                if (arr[i] >arr[j]){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
 
     public static void print(int[] arr) {
         for (int el : arr) {

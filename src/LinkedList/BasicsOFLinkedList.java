@@ -16,8 +16,16 @@ public class BasicsOFLinkedList {
         }
         System.out.println();
     }
+    public static void displayRec(Node head){
+        Node temp = head;
+        if (temp==null) return;
+        System.out.print(temp.val);
+        displayRec(temp.next);
+
+        System.out.println();
+    }
     public static void main(String[] args) {
         Node a = new Node(5);
-        display(a);
+        displayRec(a);
     }
 }

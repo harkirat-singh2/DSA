@@ -24,6 +24,18 @@ class Linkedlist{  // User Defined Data Structure
         }
         System.out.println();
     }
+    void addAtFront(){
+        Node temp = new Node(90);
+        if (tail==null) head = tail = temp;
+        temp.next = head;
+        head = temp;
+    }
+    void deleteAtFront(){
+        if (tail==null) head = tail;
+        head = head.next;
+        if (head == null) tail=null;
+    }
+
 }
 public class LLDataStruc {
     public static void main(String[] args) {
@@ -32,6 +44,12 @@ public class LLDataStruc {
         ll.addAtTail(20);
         ll.addAtTail(30);
         ll.addAtTail(40);
+        ll.display();
+        System.out.println();
+        ll.addAtFront();
+        ll.display();
+        System.out.println();
+        ll.deleteAtFront();
         ll.display();
 
     }

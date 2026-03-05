@@ -9,14 +9,15 @@ class Node{    // User Defined Data type
 }
 class Linkedlist{  // User Defined Data Structure
     Node head , tail;
-
+    int size;
     void  addAtTail(int val){
         Node temp = new Node(val);
         if (tail==null) head = tail = temp;
         tail.next= temp;
         tail = temp;
-    }
-     void display(){
+        size++;
+    }  // T,C , A.S = O(1)
+    void display(){
         Node temp = head;
         while (temp!=null){
             System.out.print(temp.val+" ");
@@ -29,11 +30,13 @@ class Linkedlist{  // User Defined Data Structure
         if (tail==null) head = tail = temp;
         temp.next = head;
         head = temp;
+        size++;
     }
     void deleteAtFront(){
         if (tail==null) head = tail;
         head = head.next;
         if (head == null) tail=null;
+        size--;
     }
 
 }
@@ -51,6 +54,7 @@ public class LLDataStruc {
         System.out.println();
         ll.deleteAtFront();
         ll.display();
+        System.out.println(ll.size);
 
     }
 }

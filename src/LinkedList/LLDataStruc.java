@@ -10,14 +10,20 @@ class Node{    // User Defined Data type
 class Linkedlist{  // User Defined Data Structure
     Node head , tail;
     int size;
-    void  addAtTail(int val){
+    void addAtTail(int val){
         Node temp = new Node(val);
-        if (tail==null) head = tail = temp;
-        tail.next= temp;
-        tail = temp;
+
+        if (tail == null){
+            head = tail = temp;
+        } else {
+            tail.next = temp;
+            tail = temp;
+        }
+
         size++;
     }  // T,C , A.S = O(1)
     void display(){
+        if (head == null) return;
         Node temp = head;
         while (temp!=null){
             System.out.print(temp.val+" ");
@@ -25,18 +31,27 @@ class Linkedlist{  // User Defined Data Structure
         }
         System.out.println();
     }
-    void addAtFront(){
-        Node temp = new Node(90);
+    void addAtFront(int val){
+        Node temp = new Node(val);
         if (tail==null) head = tail = temp;
         temp.next = head;
         head = temp;
         size++;
     }
     void deleteAtFront(){
-        if (tail==null) head = tail;
+        if (head==null) return;
         head = head.next;
         if (head == null) tail=null;
         size--;
+    }
+    boolean search(int val){
+        if (head == null) return false;
+        Node temp = head;
+        while (temp!=null){
+            if (temp.val == val)return true;
+            temp = temp.next;
+        }
+        return false;
     }
 
 }
@@ -49,12 +64,13 @@ public class LLDataStruc {
         ll.addAtTail(40);
         ll.display();
         System.out.println();
-        ll.addAtFront();
+        ll.addAtFront(60);
         ll.display();
         System.out.println();
         ll.deleteAtFront();
         ll.display();
         System.out.println(ll.size);
+        System.out.println(ll.search(40));
 
     }
 }

@@ -1,12 +1,6 @@
 package LinkedList;
 
-class Node{
-    int val;
-    Node next;
-    Node(int val){
-        this.val = val;
-    }
-}
+
 public class BasicsOFLinkedList {
     public static void display(Node head){
         Node temp = head;

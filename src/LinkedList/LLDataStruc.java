@@ -102,7 +102,7 @@ public class LLDataStruc {
         ll.deleteAtFront();
         ll.display();
         System.out.println(ll.size);
-//        System.out.println(ll.search(40));
+        System.out.println(ll.search(40));
         ll.insertAtIndex(70,1);
         ll.display();
         System.out.println(ll.get(1));

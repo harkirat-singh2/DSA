@@ -94,8 +94,8 @@ public class LLDataStruc {
         ll.addAtTail(20);
         ll.addAtTail(30);
         ll.addAtTail(40);
-//        ll.display();
-//        System.out.println();
+        ll.display();
+        System.out.println();
 //        ll.addAtFront(60);
 //        ll.display();
 //        System.out.println();

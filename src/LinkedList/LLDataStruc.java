@@ -44,17 +44,49 @@ class Linkedlist{  // User Defined Data Structure
         if (head == null) tail=null;
         size--;
     }
-    boolean search(int val){
-        if (head == null) return false;
+    int search(int val){
+        if (head == null) return -1;
         Node temp = head;
+        int idx = 0;
         while (temp!=null){
-            if (temp.val == val)return true;
+            if (temp.val == val)return idx;
+            temp = temp.next;
+            idx++;
+        }
+        return -1;
+    }
+    void insertAtIndex(int val,int idx){
+        if (idx<0 || idx>size){
+            System.out.println("Error");
+            return;
+        }
+        if (idx ==0) addAtFront(val);
+        else if (idx==size) addAtTail(val);
+        else {
+            Node temp = head;
+            for (int i = 0; i < idx-1; i++) {
+                temp = temp.next;
+            }
+            Node newNode = new Node(val);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            size++;
+        }
+
+    }
+    int get(int idx){
+        if(idx < 0 || idx >= size) return -1;
+
+        Node temp = head;
+
+        for(int i = 0; i < idx; i++){
             temp = temp.next;
         }
-        return false;
-    }
 
+        return temp.val;
+    }
 }
+
 public class LLDataStruc {
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();
@@ -62,15 +94,18 @@ public class LLDataStruc {
         ll.addAtTail(20);
         ll.addAtTail(30);
         ll.addAtTail(40);
+//        ll.display();
+//        System.out.println();
+//        ll.addAtFront(60);
+//        ll.display();
+//        System.out.println();
+//        ll.deleteAtFront();
+//        ll.display();
+//        System.out.println(ll.size);
+//        System.out.println(ll.search(40));
+        ll.insertAtIndex(70,1);
         ll.display();
-        System.out.println();
-        ll.addAtFront(60);
-        ll.display();
-        System.out.println();
-        ll.deleteAtFront();
-        ll.display();
-        System.out.println(ll.size);
-        System.out.println(ll.search(40));
+        System.out.println(ll.get(1));
 
     }
 }

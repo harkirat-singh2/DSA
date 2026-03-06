@@ -98,8 +98,8 @@ public class LLDataStruc {
         System.out.println();
         ll.addAtFront(60);
         ll.display();
-//        System.out.println();
-//        ll.deleteAtFront();
+        System.out.println();
+        ll.deleteAtFront();
 //        ll.display();
 //        System.out.println(ll.size);
 //        System.out.println(ll.search(40));

@@ -106,6 +106,7 @@ public class LLDataStruc {
         System.out.println();
         System.out.println(ll.search(40));
         ll.insertAtIndex(70,1);
+        System.out.println();
         ll.display();
         System.out.println(ll.get(1));
 

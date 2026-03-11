@@ -18,6 +18,7 @@ public class BasicsOFLinkedList {
 
         System.out.println();
     }
+
     public static int get(Node head ,int idx){
         Node temp = head;
         for (int i = 0; i <= idx; i++) {

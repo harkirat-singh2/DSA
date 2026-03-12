@@ -8,6 +8,7 @@ public class BasicsOFLinkedList {
             System.out.print(temp.val);
             temp = temp.next;
         }
+
         System.out.println();
     }
 

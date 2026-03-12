@@ -29,6 +29,7 @@ public class BasicsOFLinkedList {
         }
 
         return temp.val;
+
     }
 
     public static void main(String[] args) {

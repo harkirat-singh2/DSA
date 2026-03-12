@@ -10,6 +10,7 @@ public class BasicsOFLinkedList {
         }
 
         System.out.println();
+        System.out.println();
     }
 
     public static void displayRec(Node head){

@@ -19,7 +19,7 @@ public class BasicsOFLinkedList {
         displayRec(temp.next);
 
         System.out.println();
-
+        System.out.println();
     }
 
     public static int get(Node head ,int idx){

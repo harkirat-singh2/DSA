@@ -27,6 +27,7 @@ public class BasicsOFLinkedList {
         for (int i = 0; i <= idx; i++) {
             temp = temp.next;
         }
+
         return temp.val;
     }
 

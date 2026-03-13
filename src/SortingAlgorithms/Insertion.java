@@ -23,6 +23,7 @@ public class Insertion {
         int[] arr ={1,2,8,0,-4,0,6,5,0,3,-2,-9,4};
         System.out.println();
         insertionSort(arr);
+        System.out.println();
         print(arr);
     }
 }

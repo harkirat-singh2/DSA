@@ -79,7 +79,7 @@ class Linkedlist{  // User Defined Data Structure
 
         Node temp = head;
 
-        for(int i = 0; i < idx; i++){
+        for(int i = 1; i <= idx; i++){
             temp = temp.next;
         }
 

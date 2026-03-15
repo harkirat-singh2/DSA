@@ -85,6 +85,23 @@ class Linkedlist{  // User Defined Data Structure
 
         return temp.val;
     }
+    void deleteIndex(int index){
+        if (index>0 || index>=size){
+            System.out.println("Invalid Index");
+            return;
+        }
+        if (index==0){
+            deleteAtFront();
+            return;
+        }
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp= temp.next;
+        }
+        temp.next = temp.next.next;
+        if (index==size-1) tail=temp;
+        size--;
+    }
 }
 
 public class LLDataStruc {

@@ -39,3 +39,5 @@ public class NodeRemovalQuestion {
         return newHead;
     }
 }
+
+// Time complexitu O(n)

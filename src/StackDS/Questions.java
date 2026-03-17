@@ -60,6 +60,29 @@ public class Questions {
 
         return result.toString();
     }
+    public int calPoints(String[] arr) {
+        Stack<Integer> st = new Stack<>();
+        for (int i = 0; i < arr.length; i++) {
+            String s = arr[i];
+            if (s.equals("C")) st.pop();
+            else if (s.equals("D")) st.push(st.peek() * 2);
+            else if (s.equals("+")) {
+                int top = st.pop();
+                int secTop = st.peek();
+                int total = top + secTop;
+                st.push(top);
+                st.push(total);
+            } else {
+                st.push(Integer.parseInt(s));
+            }
+        }
+            int sum = 0;
+            while (!st.isEmpty()){
+                int top = st.pop();
+                sum+=top;
+            }
+            return sum;
+    }
     public static void main(String[] args) {
         Stack<Character> st = new Stack<>();
         System.out.println(removeConsecutive("cvjfvaabbfv"));

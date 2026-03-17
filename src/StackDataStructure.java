@@ -9,6 +9,7 @@ public class StackDataStructure {
         st.push("Puneet");
         st.push("Muskan");
         st.push("Rohit");
-        System.out.println(st);
+        System.out.println(st);   //A.S -> O(n)
+        
     }
 }

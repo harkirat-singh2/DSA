@@ -11,10 +11,9 @@ class MyStack{
     Node head;
     int length;
 
-    int peek(){
+    int peek() throws Exception{
         if (head==null){
-            System.out.println("Empty Stack");
-            return -1;
+            throw new Exception("Stack Underflow");
         }
         return head.val;
     }
@@ -51,8 +50,9 @@ class MyStack{
     }
 }
 public class StackImplementLL {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         MyStack st  = new MyStack();
+        st.peek();
         st.push(10);
         st.push(20);
         st.push(30);

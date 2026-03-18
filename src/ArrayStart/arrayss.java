@@ -245,6 +245,32 @@ public class arrayss {
             end--;
         }
     }
+
+    public static int removeDuplicates(int[] arr){
+        int n = arr.length;
+        int count = 1;
+        for (int i =0;i<n-1;i++ ){
+            if(arr[i]!=arr[i+1]) count++;
+        }
+        return count;
+    }
+    public static int removeDuplicatesInplaceTwice(int[] arr) {
+        int n = arr.length;
+        if (n <= 2) return n;
+
+        int i = 2;
+
+        for (int j = 2; j < n; j++) {
+            if (arr[j] != arr[i - 2]) {
+                arr[i] = arr[j];
+                i++;
+            }
+        }
+
+        return i;
+    }
+
+
     public static void waveArray(int[] arr){
         int n = arr.length;
         int i=0;

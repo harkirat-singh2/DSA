@@ -206,7 +206,8 @@ public class arrayss {
             if (arr[i]==0) i++;
             else if(arr[j]==1){
                 j--;
-            } else {
+            }
+            else {
                 int temp = arr[i];
                 arr[i]=arr[j];
                 arr[j]=temp;

@@ -28,12 +28,13 @@ public class arrayss {
         }
     }
     public static int getLargest(int[] array){
-        int max = Integer.MIN_VALUE;
+        int min = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
-            if (max<array[i]) {
-                max = array[i];
+            if (min<array[i]) {
+                min = array[i];
             }
-        }return max;
+
+        }return min;
     }
     public static int binarySearch(int[] array, int key) {
         // Input validation

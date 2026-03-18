@@ -29,7 +29,7 @@ public class MergeSort {
     private static void mergeSort(int[] arr) {
         if (arr.length <= 1) return;
         int n = arr.length;
-        //Create 2 arrays of sizen/2 each
+        //Create 2 arrays of size n/2 each
         int[] a = new int[n / 2];
         int[] b = new int[n - (n / 2)];
         // Step 2 : Copy-paste arr into a and b

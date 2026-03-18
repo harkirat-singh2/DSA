@@ -109,7 +109,8 @@ public class QueueDS {
         return q.peek(); // last remaining
     }
     static void display(Queue<Integer> q){
-        for (int i = 0; i < q.size(); i++) {
+        int n = q.size();
+        for (int i = 0; i < n; i++) {
             System.out.print(q.peek()+" ");
             q.add(q.remove());
         }
@@ -133,3 +134,12 @@ public class QueueDS {
 
     }
 }
+
+
+//2. Time Complexity Understanding (Important for interview)
+
+//findTheWinner() → O(n × k)
+
+//reverseQueue() → O(n)
+
+//reverseKElQueue() → O(n)

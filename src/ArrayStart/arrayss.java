@@ -56,6 +56,24 @@ public class arrayss {
         }
         return -1; // Key not found
     }
+    public static boolean binarySearchByBoolean(int[] arr, int target) {
+        if (arr == null || arr.length == 0) return false;
+
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start <= end) {
+            int m = start + (end - start) / 2;
+
+            if (arr[m] == target) return true;
+            else if (arr[m] < target) {
+                start = m + 1;
+            } else {
+                end = m - 1;
+            }
+        }
+        return false;
+    }
     public static void revArray(int[] arr){
         int start = 0;
         int end = arr.length-1;

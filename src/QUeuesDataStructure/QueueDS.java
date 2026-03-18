@@ -1,5 +1,6 @@
 package QUeuesDataStructure;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -52,6 +53,20 @@ public class QueueDS {
         }
         for (int i = 0; i < n; i++) {
             q.add(st.pop());
+        }
+    }
+    static void reverseQueueArrayList(Queue<Integer> q){
+        int n = q.size();
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Step 1: Move queue → arraylist
+        for (int i = 0; i < n; i++) {
+            arr.add(q.remove());
+        }
+
+        // Step 2: Add back in reverse
+        for (int i = n - 1; i >= 0; i--) {
+            q.add(arr.get(i));
         }
     }
     static void reverseKElQueue(Queue<Integer> q, int k){

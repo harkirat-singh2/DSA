@@ -50,5 +50,6 @@ public class ifElseQuestion {
     }
     public static void main(String[] args) {
         pattern(5);
+        System.out.println();
     }
 }

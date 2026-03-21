@@ -1,5 +1,7 @@
 package Patterns;
 
+import java.util.*;
+
 public class SquareAndRectangles {
     public static void rectangle(int n,int m){
         for (int i = 0; i < n; i++) { // Kitni lines Hogi
@@ -9,6 +11,7 @@ public class SquareAndRectangles {
             System.out.println();
         }
     }
+
     public static void square(int n){
         for (int i = 0; i < n; i++) { // Kitni lines Hogi
             for (int j = 0; j < n; j++) {  //Har lines mein kitna print hoga

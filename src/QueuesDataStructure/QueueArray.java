@@ -61,7 +61,7 @@ public class QueueArray {
         q.add(20);
         q.add(40);
         q.add(10);
-        q.remove();
-
+        System.out.println(q.remove());
+        q.display();
     }
 }

@@ -56,6 +56,7 @@ public class HarizontallyFlippedTriangles {
             for (int j = n; j >= i; j--) {  //Har lines mein kitna print hoga
                 System.out.print(j+" ");
             }
+
             System.out.println();
         }
     }

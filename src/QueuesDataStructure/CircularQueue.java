@@ -1,4 +1,4 @@
-package QUeuesDataStructure;
+package QueuesDataStructure;
 
 
 class CircleQueue{

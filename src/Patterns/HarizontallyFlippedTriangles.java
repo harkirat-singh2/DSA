@@ -62,6 +62,7 @@ public class HarizontallyFlippedTriangles {
     }
     public static void alternatealphabetFlippedTriangle(int n){
         for (int i = 1; i <= n; i++) { // Kitni lines Hogi, Simailar row print kregi eg=aaaa
+
             for (int j = 1; j <= n-i+1; j++) {  //Har lines mein kitna print hoga , different row print kregi eg=1234
                 if (i%2!=0)System.out.print((char)(i+96)+" ");
 

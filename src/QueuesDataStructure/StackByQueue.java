@@ -11,17 +11,17 @@ class MyStack{
         q.add(x);
     }
     int pop(){
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n; i++) {
             q.add(q.remove());
         }
         return q.remove();
     }
     int peek(){
-        for (int i = 0; i < n-1; i++) {
+        for (int i = 0; i < n; i++) {
             q.add(q.remove());
         }
         int x = q.peek();
-        q.add(x);
+        q.add(q.remove());
         return x;
     }
     boolean isEmpty(){

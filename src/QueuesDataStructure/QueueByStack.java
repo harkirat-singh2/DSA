@@ -50,35 +50,26 @@ class MyQueuePopEfficient{
     Stack<Integer> helper = new Stack<>();
 
     public void push(int x) {
-        st.push(x);
+        while (st.size() > 1) {
+            helper.push(st.pop());
+        }
+
+        st.add(x);
+
+        while (!helper.isEmpty()) {
+            st.push(helper.pop());
+        }
     }
 
     public int pop() {
-        while (st.size() > 1) {
-            helper.push(st.pop());
-        }
 
-        int el = st.pop();
-
-        while (!helper.isEmpty()) {
-            st.push(helper.pop());
-        }
-
-        return el;
+        return st.pop();
     }
 
     public int peek() {
-        while (st.size() > 1) {
-            helper.push(st.pop());
-        }
 
-        int el = st.peek();
+        return st.peek();
 
-        while (!helper.isEmpty()) {
-            st.push(helper.pop());
-        }
-
-        return el;
     }
 
     public boolean empty() {

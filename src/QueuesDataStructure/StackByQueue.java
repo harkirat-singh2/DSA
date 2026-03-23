@@ -20,7 +20,9 @@ class MyStack{
         for (int i = 0; i < n-1; i++) {
             q.add(q.remove());
         }
-        return q.peek();
+        int x = q.peek();
+        q.add(x);
+        return x;
     }
     boolean isEmpty(){
         return (q.isEmpty());

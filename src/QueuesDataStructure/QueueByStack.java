@@ -4,7 +4,7 @@ import java.util.Stack;
 import java.util.Stack;
 
 //  PUSH EFFICIENT APPROACH
-class MyQueue {
+class MyQueuePushEfficient {
     Stack<Integer> st = new Stack<>();
     Stack<Integer> helper = new Stack<>();
 
@@ -43,6 +43,11 @@ class MyQueue {
     public boolean empty() {
         return st.isEmpty();
     }
+}
+
+class MyQueuePopEfficient{
+    Stack<Integer> st = new Stack<>();
+    Stack<Integer> helper = new Stack<>();
 }
 
 public class QueueByStack {

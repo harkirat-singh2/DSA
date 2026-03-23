@@ -10,9 +10,9 @@ public class Questions {
         for (int i = 0; i <n/2 ; i++) {
             p.add(q.remove());
         }
-        for (int i = n/2; i <n ; i++) {
-            q.add(p.remove());
-            q.add(q.remove());
+        while (!p.isEmpty()) {
+            q.add(p.remove());   // from first half
+            q.add(q.remove());   // from second half
         }
 
     }

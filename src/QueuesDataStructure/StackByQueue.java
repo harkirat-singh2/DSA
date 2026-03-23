@@ -46,24 +46,20 @@ class MyStackPopEfficient{
 
     void push(int x){
         q.add(x);
+        int n = q.size();
+        for (int i = 0; i < n; i++) {
+            q.add(q.remove());
+        }
+
     }
     int pop(){
-        int n = q.size();
-        for (int i = 0; i < n; i++) {
-            q.add(q.remove());
-        }
         return q.remove();
     }
-    int peek(){
-        int n = q.size();
-        for (int i = 0; i < n; i++) {
-            q.add(q.remove());
-        }
-        int x = q.peek();
-        q.add(q.remove());
-        return x;
+    int top(){
+
+        return q.peek();
     }
-    boolean isEmpty(){
+    boolean empty(){
         return (q.isEmpty());
     }
 }

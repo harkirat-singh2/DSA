@@ -55,21 +55,17 @@ class MyQueuePopEfficient{
         }
 
         st.add(x);
-
         while (!helper.isEmpty()) {
             st.push(helper.pop());
         }
     }
 
     public int pop() {
-
         return st.pop();
     }
 
     public int peek() {
-
         return st.peek();
-
     }
 
     public boolean empty() {

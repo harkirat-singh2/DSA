@@ -18,7 +18,7 @@ class MyQueue {
 
         int el = st.pop();
 
-        while (!helper.isEmpty()) {   // ✅ FIXED
+        while (!helper.isEmpty()) {
             st.push(helper.pop());
         }
 
@@ -32,7 +32,7 @@ class MyQueue {
 
         int el = st.peek();
 
-        while (!helper.isEmpty()) {   // ✅ FIXED
+        while (!helper.isEmpty()) {
             st.push(helper.pop());
         }
 

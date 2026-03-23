@@ -3,6 +3,7 @@ package QueuesDataStructure;
 import java.util.Stack;
 import java.util.Stack;
 
+//  PUSH EFFICIENT APPROACH
 class MyQueue {
     Stack<Integer> st = new Stack<>();
     Stack<Integer> helper = new Stack<>();

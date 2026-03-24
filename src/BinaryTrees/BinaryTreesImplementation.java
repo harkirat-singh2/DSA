@@ -1,5 +1,9 @@
 package BinaryTrees;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 class Node{
     int val;
     Node left , right;
@@ -19,9 +23,21 @@ class Solution{
         if (a.val!=b.val) return false;
         return isMirror(a.left, b.right) &&  isMirror(a.right, b.left);
     }
-    
 
-    }
+//    public List<String> binaryTreePaths(Node root) {
+//
+//    }
+//
+//    public void binaryTreePaths(Node root,String path,List<String> s) {
+//        if (root == null) return ;
+//        if (root.left == null && root.right == null) return;
+//        s.add(root+"->"+root.val);
+//        binaryTreePaths(root)
+//
+//
+//    }
+
+}
 public class BinaryTreesImplementation {
 
     static void displayPreorder(Node root){
@@ -117,8 +133,23 @@ public class BinaryTreesImplementation {
             return targetSum == 0;
         }
 
-        return hasPathSum(root.left, targetSum) ||
-                hasPathSum(root.right, targetSum);
+        return hasPathSumAlterMethod(root.left, targetSum) ||
+                hasPathSumAlterMethod(root.right, targetSum);
+    }
+
+    public static void levelOrderTraversalBFS(Node root) {
+        if (root == null) return;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            Node current = q.remove();
+            System.out.println(current.val);
+
+            if (current.left != null) q.add(current.left);
+            if (current.right != null) q.add(current.right);
+        }
     }
 
     public static void main(String[] args) {

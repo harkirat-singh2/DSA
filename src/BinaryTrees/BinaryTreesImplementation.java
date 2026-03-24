@@ -101,7 +101,7 @@ public class BinaryTreesImplementation {
 
     public boolean hasPathSum(Node root, int targetSum) {
         if(root==null) return false;
-        if(root.left==null && root.right==null){
+        if(root.left==null && root.right==null){   // Going till leaf condition
             if(targetSum==root.val) return true;
             else return false;
         }

@@ -1,5 +1,6 @@
 package BinaryTrees;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -25,7 +26,6 @@ class Solution{
     public boolean isSymmetric(Node root) {
         return(isMirror(root.left,root.right));
     }
-
     private boolean isMirror(Node a , Node b){
         if (a == null &&  b==null) return true;
         if (a == null ||  b==null) return false;
@@ -33,18 +33,25 @@ class Solution{
         return isMirror(a.left, b.right) &&  isMirror(a.right, b.left);
     }
 
-//    public List<String> binaryTreePaths(Node root) {
-//
-//    }
-//
-//    public void binaryTreePaths(Node root,String path,List<String> s) {
-//        if (root == null) return ;
-//        if (root.left == null && root.right == null) return;
-//        s.add(root+"->"+root.val);
-//        binaryTreePaths(root)
-//
-//
-//    }
+    public List<String> binaryTreePaths(Node root) {
+        List<String> s = new ArrayList<>();
+        dfs(root, "", s);   // start with empty path
+        return s;
+    }
+    public void dfs(Node root,String path,List<String> s) {
+        if (root == null) return;
+        // build path
+        String newPath;
+        if (path.isEmpty()) newPath = "" + root.val;
+        else newPath = path + "->" + root.val;
+        // leaf
+        if (root.left == null && root.right == null) {
+            s.add(newPath);
+            return;
+        }
+        dfs(root.left, newPath, s);
+        dfs(root.right, newPath, s);
+    }
 
 }
 public class BinaryTreesImplementation {
@@ -186,6 +193,8 @@ public class BinaryTreesImplementation {
         nthLevel(root.left,level+1,k);
         nthLevel(root.right,level+1,k);
     }
+
+
 
     public static void main(String[] args) {
         Node a = new Node(1);

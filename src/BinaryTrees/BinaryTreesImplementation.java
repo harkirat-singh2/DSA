@@ -151,6 +151,20 @@ public class BinaryTreesImplementation {
             if (current.right != null) q.add(current.right);
         }
     }
+    public static void levelOrderTraversalBFSLevelWise(Node root) {
+        if (root == null) return;
+
+        Queue<Node> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            Node current = q.remove();
+            System.out.println(current.val);
+
+            if (current.left != null) q.add(current.left);
+            if (current.right != null) q.add(current.right);
+        }
+    }
 
     public static void main(String[] args) {
         Node a = new Node(1);

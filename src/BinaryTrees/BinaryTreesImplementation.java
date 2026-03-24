@@ -11,8 +11,8 @@ class Node{
         this.val = val;
     }
 }
-class Pair{
-    Node node;
+class Pair{                           // Node = Tree
+    Node node;                        // Pair = (Node + extra info for algorithm)
     int level;
     Pair(Node node, int level){
         this.node = node;
@@ -178,6 +178,13 @@ public class BinaryTreesImplementation {
             if (front.node.left != null) q.add(new Pair(front.node.left,front.level+1));
             if (front.node.right != null) q.add(new Pair(front.node.right,front.level+1));
         }
+    }
+
+    public static void nthLevel(Node root, int level,int k){
+        if (root==null) return;
+        if (level==k) System.out.println(root.val);
+        nthLevel(root.left,level+1,k);
+        nthLevel(root.right,level+1,k);
     }
 
     public static void main(String[] args) {

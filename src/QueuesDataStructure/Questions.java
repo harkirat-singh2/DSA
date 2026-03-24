@@ -59,7 +59,7 @@ public class Questions {
         }
         return l;
     }
-    static List<Integer> firstNegIntByQueue(int[] arr, int k) {
+    static List<Integer> firstNegIntByQueue(int[] arr, int k) { // T.C -> Amortized O(n)
         List<Integer> l = new ArrayList<>();
         Queue<Integer> q = new LinkedList<>();
         int n = arr.length;
@@ -68,7 +68,6 @@ public class Questions {
         for (int i = 0; i < n; i++) {
             if (arr[i] < 0) q.add(i);
         }
-
         // Step 2: process each window
         for (int i = 0; i <= n - k; i++) {
 
@@ -76,7 +75,6 @@ public class Questions {
             while (!q.isEmpty() && q.peek() < i) {
                 q.remove();
             }
-
             // check if first negative is inside window
             if (!q.isEmpty() && q.peek() < i + k) {
                 l.add(arr[q.peek()]);
@@ -84,7 +82,6 @@ public class Questions {
                 l.add(0);
             }
         }
-
         return l;
     }
 

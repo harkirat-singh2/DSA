@@ -108,6 +108,19 @@ public class BinaryTreesImplementation {
         return (hasPathSum(root.left,targetSum-root.val) || hasPathSum(root.right,targetSum-root.val));
     }
 
+    public boolean hasPathSumAlterMethod(Node root, int targetSum) {
+        if (root == null) return false;
+
+        targetSum -= root.val;
+
+        if (root.left == null && root.right == null) {
+            return targetSum == 0;
+        }
+
+        return hasPathSum(root.left, targetSum) ||
+                hasPathSum(root.right, targetSum);
+    }
+
     public static void main(String[] args) {
         Node a = new Node(1);
         Node b = new Node(0);

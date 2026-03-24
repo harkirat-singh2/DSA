@@ -11,6 +11,15 @@ class Node{
         this.val = val;
     }
 }
+class Pair{
+    Node node;
+    int level;
+    Pair(Node node, int level){
+        this.node = node;
+        this.level = level;
+    }
+}
+
 
 class Solution{
     public boolean isSymmetric(Node root) {

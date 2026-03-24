@@ -161,17 +161,22 @@ public class BinaryTreesImplementation {
         }
     }
     public static void levelOrderTraversalBFSLevelWise(Node root) {
+        int currLevel = 0;
         if (root == null) return;
 
-        Queue<Node> q = new LinkedList<>();
-        q.add(root);
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(root,0));
 
         while (!q.isEmpty()) {
-            Node current = q.remove();
-            System.out.println(current.val);
+            Pair front = q.remove();
+            if (front.level!=currLevel){
+                currLevel++;
+                System.out.println();
+            }
+            System.out.print(front.node.val+" ");
 
-            if (current.left != null) q.add(current.left);
-            if (current.right != null) q.add(current.right);
+            if (front.node.left != null) q.add(new Pair(front.node.left,front.level+1));
+            if (front.node.right != null) q.add(new Pair(front.node.right,front.level+1));
         }
     }
 

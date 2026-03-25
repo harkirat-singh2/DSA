@@ -61,8 +61,8 @@ class Solutions {
     void view(Node root , int level , List<Integer> ans){
         if (root==null) return;
         if (level>=ans.size())ans.add(root.val);
-        view(root.left,level+1,ans);
         view(root.right,level+1,ans);
+        view(root.left,level+1,ans);
     }
 
 }

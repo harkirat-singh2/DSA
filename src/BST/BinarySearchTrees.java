@@ -55,6 +55,26 @@ public class BinarySearchTrees {
         return (root.val>target) ? searchBST(root.left,target) : searchBST(root.right,target);
     }
 
+    int getCount(TreeNode root, int low, int high) {
+        int count=0;
+        if (root==null) return 0;
+        if (root.val >= low && root.val <= high) count = 1;
+        count+=getCount(root.left,low,high);
+        count+=getCount(root.right,low,high);
+        return count;
+    }
+
+    int rangeSumBST(TreeNode root, int low, int high) {
+        int sum=0;
+        if (root==null) return 0;
+        if (root.val >= low && root.val <= high) sum+=root.val;
+        sum+=rangeSumBST(root.left,low,high);
+        sum+=rangeSumBST(root.right,low,high);
+        return sum;
+    }
+
+
+
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1);
         TreeNode b = new TreeNode(0);

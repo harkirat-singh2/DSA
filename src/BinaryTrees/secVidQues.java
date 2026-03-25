@@ -65,6 +65,11 @@ class Solutions {
         view(root.left,level+1,ans);
     }
 
+
+}
+
+public class secVidQues {
+
     public Node lowestCommonAncestor(Node root, Node p, Node q) {
         if (root == null) return null;
         if (root == p || root == q) return root;
@@ -74,9 +79,13 @@ class Solutions {
         return (left != null) ? left : right;
     }
 
-}
+//    int findDistance(Node root,int a ,int b){
+//        if (root == null) return 0;
+//        Node lca = lowestCommonAncestor(root, p, q) ;
+//        int left = findDistance(root.left, a, b);
+//        int right = findDistance(root.right, a, b);
+//    }
 
-public class secVidQues {
    
     public static void main(String[] args) {
 

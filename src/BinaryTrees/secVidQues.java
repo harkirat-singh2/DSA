@@ -1,5 +1,8 @@
 package BinaryTrees;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class Solutions {
 
     int levels(Node root) {
@@ -48,6 +51,18 @@ class Solutions {
         int rightLevels = levelsforDia(root.right);
         max = Math.max(max,leftLevels+rightLevels);
         return 1+ Math.max(leftLevels,rightLevels);
+    }
+
+    public List<Integer> rightSideView(Node root) {
+        List<Integer> ans = new ArrayList<>();
+        view(root,0,ans);
+        return ans;
+    }
+    void view(Node root , int level , List<Integer> ans){
+        if (root==null) return;
+        if (level>=ans.size())ans.add(root.val);
+        view(root.left,level+1,ans);
+        view(root.right,level+1,ans);
     }
 
 }

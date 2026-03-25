@@ -49,6 +49,12 @@ public class BinarySearchTrees {
         return new Pair(min, max);
     }
 
+    boolean searchBST(TreeNode root , int target){
+        if (root==null) return false;
+        if (root.val == target) return true;
+        return (root.val>target) ? searchBST(root.left,target) : searchBST(root.right,target);
+    }
+
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1);
         TreeNode b = new TreeNode(0);
@@ -70,6 +76,7 @@ public class BinarySearchTrees {
         Pair result = bt.minAndMaxBST(a);
         System.out.println("Min: " + result.min);
         System.out.println("Max: " + result.max);
+        System.out.println(bt.searchBST(a,7));
 
     }
 }

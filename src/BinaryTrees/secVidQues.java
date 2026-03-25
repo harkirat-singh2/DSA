@@ -2,9 +2,9 @@ package BinaryTrees;
 
 class Solutions {
 
-    int  levels(Node root){
-        if (root==null) return 0;
-        return 1 + Math.max(levels(root.left) , levels(root.right));
+    int levels(Node root) {
+        if (root == null) return 0;
+        return 1 + Math.max(levels(root.left), levels(root.right));
     }
 
     boolean isBalanced(Node root) {

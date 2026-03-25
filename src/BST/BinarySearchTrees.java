@@ -70,7 +70,6 @@ public class BinarySearchTrees {
         if (root.val >= low && root.val <= high) sum+=root.val;
         sum+=rangeSumBST(root.left,low,high);
         sum+=rangeSumBST(root.right,low,high);
-        System.out.println();
         return sum;
     }
 

@@ -59,7 +59,7 @@ public class BinarySearchTrees {
     int getCount(TreeNode root, int low, int high) {
         int count=0;
         if (root==null) return 0;
-        if (root.val >= low && root.val <= high) count = 1;
+        if (root.val >= low && root.val <= high) count++;
         count+=getCount(root.left,low,high);
         count+=getCount(root.right,low,high);
         return count;

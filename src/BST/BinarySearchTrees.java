@@ -2,6 +2,7 @@ package BST;
 
 
 import com.sun.source.tree.Tree;
+import org.w3c.dom.Node;
 
 class TreeNode{
     TreeNode left, right;
@@ -72,8 +73,19 @@ public class BinarySearchTrees {
         sum+=rangeSumBST(root.right,low,high);
         return sum;
     }
+    public TreeNode insertIntoBST(TreeNode root, int key) {
+        if (root == null) {
+            return new TreeNode(key);
+        }
 
+        if (key < root.val) {
+            root.left = insertIntoBST(root.left, key);
+        } else if (key > root.val) {
+            root.right = insertIntoBST(root.right, key);
+        }
 
+        return root;
+    }
 
     public static void main(String[] args) {
         TreeNode a = new TreeNode(1);

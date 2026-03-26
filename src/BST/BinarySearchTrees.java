@@ -97,7 +97,6 @@ public class BinarySearchTrees {
 
     void inorder(TreeNode root, ArrayList<Integer> arr) {
         if (root == null) return;
-
         inorder(root.left, arr);
         arr.add(root.val);
         inorder(root.right, arr);
@@ -120,7 +119,19 @@ public class BinarySearchTrees {
         if (p.val<root.val && q.val<root.val) return lowestCommonAncestor(root.left,p,q);
         if (p.val>root.val &&  q.val>root.val)return lowestCommonAncestor(root.right,p,q);
         return root;
+    }
+    int sum = 0;
+    void revInorder(TreeNode root) {
+        if (root == null) return;
+        revInorder(root.right);
+        sum+=root.val;
+        root.val=sum;
+        revInorder(root.left);
+    }
 
+    TreeNode convertBST(TreeNode root) {
+        revInorder(root);
+        return root;
     }
 
     public static void main(String[] args) {

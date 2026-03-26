@@ -4,6 +4,8 @@ package BST;
 import com.sun.source.tree.Tree;
 import org.w3c.dom.Node;
 
+import java.util.ArrayList;
+
 class TreeNode{
     TreeNode left, right;
     int val;
@@ -85,6 +87,32 @@ public class BinarySearchTrees {
         }
 
         return root;
+    }
+
+    public int kthSmallest(TreeNode root, int k) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        inorder(root, arr);
+        return arr.get(k - 1);
+    }
+
+    void inorder(TreeNode root, ArrayList<Integer> arr) {
+        if (root == null) return;
+
+        inorder(root.left, arr);
+        arr.add(root.val);
+        inorder(root.right, arr);
+    }
+
+    boolean isValidBST(TreeNode root) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        inorder(root,arr);
+        for (int i = 0; i < arr.size() - 1; i++) {
+            if (arr.get(i) >= arr.get(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
     public static void main(String[] args) {

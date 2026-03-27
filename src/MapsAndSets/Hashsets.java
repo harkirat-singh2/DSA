@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class Hashsets {
 
-    int distinvt(int[] arr){
+    int distinctInt(int[] arr){
         HashSet<Integer> h = new HashSet<>();
         for (int i = 0; i < arr.length; i++) h.add(arr[i]);
         return h.size();

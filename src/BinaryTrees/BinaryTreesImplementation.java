@@ -190,7 +190,10 @@ public class BinaryTreesImplementation {
 
     public static void nthLevel(Node root, int level,int k){
         if (root==null) return;
-        if (level==k) System.out.println(root.val);
+        if (level==k) {
+            System.out.println(root.val);
+            return;
+        }
         nthLevel(root.left,level+1,k);
         nthLevel(root.right,level+1,k);
     }

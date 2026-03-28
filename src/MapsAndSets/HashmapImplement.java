@@ -1,0 +1,58 @@
+package MapsAndSets;
+
+import java.util.HashMap;
+
+public class HashmapImplement {
+
+    public char getMaxOccuringChar(String s) {
+        HashMap<Character,Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (map.containsKey(ch)){
+//                int freq = map.get(ch);
+//                map.put(ch,freq+1);
+                map.put(ch, map.getOrDefault(ch, 0) + 1);
+            }
+            else map.put(ch,1);
+        }
+        int maxFreq=0;
+        char resultChar='z';
+        for (char ch : map.keySet()) {
+            int freq = map.get(ch);
+
+            if (freq > maxFreq) {
+                maxFreq = freq;
+                resultChar = ch;
+            }
+        }
+        return resultChar;
+    }
+
+     boolean isSubsetApproach1(int[] a , int[] b){
+         HashMap<Integer,Integer> ma = new HashMap<>();
+         HashMap<Integer,Integer> mb = new HashMap<>();
+         for (int el : a){
+             if (!ma.containsKey(el)) ma.put(el, ma.getOrDefault(el, 0) + 1);
+             else ma.put(el,1);
+         }
+         for (int el : b){
+             if (!ma.containsKey(el)) return false;
+             if (mb.containsKey(el)) mb.put(el, mb.getOrDefault(el, 0) + 1);
+             else mb.put(el,1);
+         }
+         for (int el : mb.keySet()){
+             int bFreq = mb.get(el);
+             int aFreq = ma.get(el);
+             if (aFreq<bFreq) return false;
+
+         }
+         return true;
+     }
+
+    public static void main(String[] args) {
+        HashmapImplement hmap = new HashmapImplement();
+        String s = "aabbbcc";
+        System.out.println(hmap.getMaxOccuringChar(s));
+
+    }
+}

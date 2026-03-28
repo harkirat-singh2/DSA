@@ -24,16 +24,6 @@ class Pair{
 
 public class BinarySearchTrees {
 
-    class Pair {
-        int min;
-        int max;
-
-        Pair(int min, int max) {
-            this.min = min;
-            this.max = max;
-        }
-    }
-
     Pair minAndMaxBST(TreeNode root) {
         // Base case
         if (root == null) {
@@ -116,7 +106,7 @@ public class BinarySearchTrees {
     }
 
      TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-
+         if (root == null) return null;
         if (p.val<root.val && q.val<root.val) return lowestCommonAncestor(root.left,p,q);
         if (p.val>root.val &&  q.val>root.val)return lowestCommonAncestor(root.right,p,q);
         return root;
@@ -141,7 +131,7 @@ public class BinarySearchTrees {
     }
     public TreeNode convert(int[] arr,int low , int high) {
         if(low>high) return null;
-        int mid = (low+high)/2;
+        int mid = low + (high - low) / 2;
         TreeNode root = new TreeNode(arr[mid]);
         root.left = convert(arr,low,mid-1);
         root.right = convert(arr,mid+1,high);

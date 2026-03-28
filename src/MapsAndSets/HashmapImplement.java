@@ -60,6 +60,28 @@ public class HashmapImplement {
         return true;
     }
 
+    int countKDifference(int[] nums, int k) {
+        int count = 0;
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int el : nums) {
+            map.put(el, map.getOrDefault(el, 0) + 1);
+        }
+        if (k == 0) {
+            for (int el : map.keySet()) {
+                int f = map.get(el);
+                count += f * (f - 1) / 2;
+            }
+        } else {
+            for (int el : map.keySet()) {
+                if (map.containsKey(el + k)) {
+                    count += map.get(el) * map.get(el + k);
+                }
+            }
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         HashmapImplement hmap = new HashmapImplement();
         String s = "aabbbcc";

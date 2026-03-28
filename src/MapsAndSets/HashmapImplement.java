@@ -72,7 +72,8 @@ public class HashmapImplement {
                 int f = map.get(el);
                 count += f * (f - 1) / 2;
             }
-        } else {
+        }
+        else {
             for (int el : map.keySet()) {
                 if (map.containsKey(el + k)) {
                     count += map.get(el) * map.get(el + k);

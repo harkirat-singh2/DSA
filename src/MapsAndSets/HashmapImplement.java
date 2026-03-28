@@ -28,26 +28,37 @@ public class HashmapImplement {
         return resultChar;
     }
 
-     boolean isSubsetApproach1(int[] a , int[] b){
-         HashMap<Integer,Integer> ma = new HashMap<>();
-         HashMap<Integer,Integer> mb = new HashMap<>();
-         for (int el : a){
-             if (!ma.containsKey(el)) ma.put(el, ma.getOrDefault(el, 0) + 1);
-             else ma.put(el,1);
-         }
-         for (int el : b){
-             if (!ma.containsKey(el)) return false;
-             if (mb.containsKey(el)) mb.put(el, mb.getOrDefault(el, 0) + 1);
-             else mb.put(el,1);
-         }
-         for (int el : mb.keySet()){
-             int bFreq = mb.get(el);
-             int aFreq = ma.get(el);
-             if (aFreq<bFreq) return false;
+    boolean isSubsetApproach1(int[] a, int[] b) {
+        HashMap<Integer, Integer> ma = new HashMap<>();
+        HashMap<Integer, Integer> mb = new HashMap<>();
 
-         }
-         return true;
-     }
+        for (int el : a) {
+            ma.put(el, ma.getOrDefault(el, 0) + 1);
+        }
+        for (int el : b) {
+            if (!ma.containsKey(el)) return false;
+            mb.put(el, mb.getOrDefault(el, 0) + 1);
+        }
+        for (int el : mb.keySet()) {
+            int bFreq = mb.get(el);
+            int aFreq = ma.get(el);
+
+            if (aFreq < bFreq) return false;
+        }
+        return true;
+    }
+
+    boolean isSubsetApproach2(int[] a, int[] b){
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int el:a){
+            map.put(el, map.getOrDefault(el,0)+1);
+        }
+        for(int el: b){
+            if (!map.containsKey(el) || map.get(el)==0) return false;
+            else map.put(el,map.get(el)-1);
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         HashmapImplement hmap = new HashmapImplement();

@@ -1,6 +1,7 @@
 package MapsAndSets;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class HashmapImplement {
 
@@ -113,6 +114,14 @@ public class HashmapImplement {
         return pairs;
     }
 
+    public int lengthOfLongestSubstring(String s) {
+        HashSet<Character> set = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            set.add(ch);
+        }
+        return set.size();
+    }
 
     public static void main(String[] args) {
         HashmapImplement hmap = new HashmapImplement();

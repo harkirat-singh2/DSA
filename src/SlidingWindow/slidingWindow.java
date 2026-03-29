@@ -62,7 +62,7 @@ public class slidingWindow {
         Queue<Integer> q = new LinkedList<>();
         int left = 0;
         for (int right = 0; right < arr.length; right++) {
-            // Step 1: add negative
+            // Step 1: add negative into queue
             if (arr[right] < 0) {
                 q.add(arr[right]);
             }

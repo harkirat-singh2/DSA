@@ -1,6 +1,8 @@
 package SlidingWindow;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class slidingWindow {
 
@@ -37,7 +39,7 @@ public class slidingWindow {
         return maxSum;
     }
 
-    ArrayList<Integer> firstNegIntWindow(int[] arr,int k){
+    ArrayList<Integer> firstNegIntWindowBruteFORCE(int[] arr,int k){
         ArrayList<Integer> al = new ArrayList<>();
         int n = arr.length;
         for (int i = 0; i <  n - k + 1; i++) {
@@ -55,6 +57,31 @@ public class slidingWindow {
         }
         return al;
     }
+    ArrayList<Integer> firstNegIntWindow(int[] arr, int k) {
+        ArrayList<Integer> res = new ArrayList<>();
+        Queue<Integer> q = new LinkedList<>();
+        int left = 0;
+        for (int right = 0; right < arr.length; right++) {
+            // Step 1: add negative
+            if (arr[right] < 0) {
+                q.add(arr[right]);
+            }
+            // Step 2: window size = k
+            if (right - left + 1 == k) {
+
+                // equivalent of "found"
+                if (q.isEmpty()) res.add(0);
+                else res.add(q.peek());
+                // Step 3: remove outgoing element
+                if (!q.isEmpty() && q.peek() == arr[left]) {
+                    q.poll();
+                }
+                left++;
+            }
+        }
+        return res;
+    }
+
 
     public static void main(String[] args) {
 

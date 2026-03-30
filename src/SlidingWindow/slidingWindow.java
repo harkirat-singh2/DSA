@@ -1,6 +1,7 @@
 package SlidingWindow;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -82,6 +83,42 @@ public class slidingWindow {
         return res;
     }
 
+//    public int findMinDiffChocolateDistribution(ArrayList<Integer> arr, int m) {
+//        int n = arr.size();
+//        Collections.sort(arr);
+//        int result = 0;
+//        for (int i = 0; i < n-m+1; i++) {
+//
+//        }
+//
+//    }
+    int TotalSubarrayGivesZero(int[] arr){
+        int n= arr.length;
+        int count=0;
+        for (int i = 0; i < n; i++) {                   // T.C. ->O(n^3)
+            for (int j = i; j < n; j++) {
+                int sum = 0;
+                for (int k = i; k < j; k++) {
+                    sum+=arr[k];
+                }
+                if (sum==0) count++;
+            }
+        }
+        return count;
+    }
+
+    int TotalSubarrayGivesZeroNSquare(int[] arr){
+        int n= arr.length;
+        int count=0;
+        for (int i = 0; i < n; i++) {                   // T.C. ->O(n^3)
+            int sum = 0;
+            for (int j = i; j < n; j++) {
+                    sum+=arr[j];
+                if (sum==0) count++;
+            }
+        }
+        return count;
+    }
 
     public static void main(String[] args) {
 

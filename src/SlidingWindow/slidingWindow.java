@@ -1,9 +1,6 @@
 package SlidingWindow;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class slidingWindow {
 
@@ -110,13 +107,34 @@ public class slidingWindow {
     int TotalSubarrayGivesZeroNSquare(int[] arr){
         int n= arr.length;
         int count=0;
-        for (int i = 0; i < n; i++) {                   // T.C. ->O(n^3)
+        for (int i = 0; i < n; i++) {                   // T.C. ->O(n^2)
             int sum = 0;
             for (int j = i; j < n; j++) {
                     sum+=arr[j];
                 if (sum==0) count++;
             }
         }
+        return count;
+    }
+
+    int TotalSubarrayGivesZeroOptimized(int[] arr){
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        int sum = 0;
+        int count = 0;
+
+        map.put(0, 1); // important
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+
+            if (map.containsKey(sum)) {
+                count += map.get(sum);
+            }
+
+            map.put(sum, map.getOrDefault(sum, 0) + 1);
+        }
+
         return count;
     }
 

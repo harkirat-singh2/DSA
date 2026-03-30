@@ -11,7 +11,7 @@ public class slidingWindow {
         int maxSum = 0;
         for (int i = 0; i < n-k+1; i++) {
             int sum = 0;
-            for (int j = i; j < i + k - 1; j++) {
+            for (int j = i; j < i + k; j++) {
                 sum+=arr[j];
             }
             maxSum = Math.max(maxSum,sum);

@@ -111,11 +111,8 @@ public class arrayss {
         int smax = Integer.MIN_VALUE;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i]!=largest && arr[i]>smax) {
-
                 smax = arr[i];
-
             }
-
         }return smax;
     }
     public static void reverseArray(int[] arr){

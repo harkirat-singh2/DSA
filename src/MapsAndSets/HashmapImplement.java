@@ -116,11 +116,19 @@ public class HashmapImplement {
 
     public int lengthOfLongestSubstring(String s) {
         HashSet<Character> set = new HashSet<>();
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
+        int left = 0;
+        int maxLen = 0;
+        for (int right = 0; right < s.length(); right++) {
+            char ch = s.charAt(right);
+            // remove until no duplicate
+            while (set.contains(ch)) {
+                set.remove(s.charAt(left));
+                left++;
+            }
             set.add(ch);
+            maxLen = Math.max(maxLen, right - left + 1);
         }
-        return set.size();
+        return maxLen;
     }
 
     public static void main(String[] args) {

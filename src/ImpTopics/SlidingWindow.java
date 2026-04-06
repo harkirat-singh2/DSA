@@ -1,15 +1,7 @@
 package ImpTopics;
 
 public class SlidingWindow {
-//    static int[] slidingWindowApproach1(int[] arr,int k){
-//        for (int i = 0; i < arr.length; i++) {
-//            int min = Integer.MIN_VALUE;
-//            for (int j = i; j < i+k; j++) {
-//
-//
-//            }
-//        }
-//    }
+
 
     static int subArrayEqualsK(int[] arr, int k) {
         int total = 0;

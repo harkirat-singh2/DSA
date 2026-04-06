@@ -26,6 +26,7 @@ class Solution{
     public boolean isSymmetric(Node root) {
         return(isMirror(root.left,root.right));
     }
+
     private boolean isMirror(Node a , Node b){
         if (a == null &&  b==null) return true;
         if (a == null ||  b==null) return false;

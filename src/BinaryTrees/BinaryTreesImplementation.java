@@ -155,6 +155,32 @@ public class BinaryTreesImplementation {
                 hasPathSumAlterMethod(root.right, targetSum);
     }
 
+    public List<List<Integer>> pathSum(Node root, int targetSum) {
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
+
+        helper(root, targetSum, path, result);
+        return result;
+    }
+
+    private void helper(Node root, int target, List<Integer> path, List<List<Integer>> result) {
+        if (root == null) return;
+
+        // add current node
+        path.add(root.val);
+
+        // leaf node check
+        if (root.left == null && root.right == null && target == root.val) {
+            result.add(new ArrayList<>(path)); // store copy
+        } else {
+            helper(root.left, target - root.val, path, result);
+            helper(root.right, target - root.val, path, result);
+        }
+
+        // backtrack
+        path.remove(path.size() - 1);
+    }
+
     public static void levelOrderTraversalBFS(Node root) {
         if (root == null) return;
 

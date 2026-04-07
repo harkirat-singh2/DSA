@@ -205,8 +205,8 @@ public class BinaryTreesImplementation {
 
         while (!q.isEmpty()) {
             Pair front = q.remove();
-            if (front.level!=currLevel){
-                currLevel++;
+            if (front.level != currLevel) {
+                currLevel = front.level;
                 System.out.println();
             }
             System.out.print(front.node.val+" ");

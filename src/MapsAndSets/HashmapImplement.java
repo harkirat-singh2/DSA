@@ -1,7 +1,82 @@
 package MapsAndSets;
 
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
+
+class TreeNode{
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int val){
+        this.val = val;
+    }
+}
+
+class Pair{
+    TreeNode node;
+    int dist;
+
+    Pair(TreeNode node, int dist){
+        this.node = node;
+        this.dist = dist;
+    }
+}
+
+class View{
+    public ArrayList<Integer> topView(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if (root == null) return ans;
+
+        // HD → node value         For sorting HDs automatically
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(root, 0));
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            // store first occurrence only
+            if (!map.containsKey(front.dist)) {
+                map.put(front.dist, front.node.val);
+            }
+            if (front.node.left != null) {
+                q.add(new Pair(front.node.left, front.dist - 1));
+            }
+            if (front.node.right != null) {
+                q.add(new Pair(front.node.right, front.dist + 1));
+            }
+        }
+        // fill answer from sorted map
+        for (int val : map.values()) {
+            ans.add(val);
+        }
+        return ans;
+    }
+    public ArrayList<Integer> bottomView(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        if (root == null) return ans;
+
+        // HD → node value         For sorting HDs automatically
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(root, 0));
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            // store first occurrence only
+                map.put(front.dist, front.node.val);
+
+            if (front.node.left != null) {
+                q.add(new Pair(front.node.left, front.dist - 1));
+            }
+            if (front.node.right != null) {
+                q.add(new Pair(front.node.right, front.dist + 1));
+            }
+        }
+        // fill answer from sorted map
+        for (int val : map.values()) {
+            ans.add(val);
+        }
+        return ans;
+    }
+}
 
 public class HashmapImplement {
 

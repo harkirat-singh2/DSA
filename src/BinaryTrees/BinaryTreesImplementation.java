@@ -136,8 +136,9 @@ public class BinaryTreesImplementation {
     public boolean hasPathSum(Node root, int targetSum) {
         if(root==null) return false;
         if(root.left==null && root.right==null){   // Going till leaf condition
-            if(targetSum==root.val) return true;
-            else return false;
+//            if(targetSum==root.val) return true;
+//            else return false;
+            return targetSum==root.val;
         }
         return (hasPathSum(root.left,targetSum-root.val) || hasPathSum(root.right,targetSum-root.val));
     }
@@ -148,6 +149,8 @@ public class BinaryTreesImplementation {
         targetSum -= root.val;
 
         if (root.left == null && root.right == null) {
+//            if(targetSum==0) return true;
+//            else return false;
             return targetSum == 0;
         }
 

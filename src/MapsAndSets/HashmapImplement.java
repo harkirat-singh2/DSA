@@ -60,7 +60,7 @@ class View{
         q.add(new Pair(root, 0));
         while (!q.isEmpty()) {
             Pair front = q.remove();
-            // store first occurrence only
+            // updating elements
                 map.put(front.dist, front.node.val);
 
             if (front.node.left != null) {

@@ -22,7 +22,7 @@ class Pair{
     }
 }
 
-class View{
+class Questions{
     public ArrayList<Integer> topView(TreeNode root) {
         ArrayList<Integer> ans = new ArrayList<>();
         if (root == null) return ans;

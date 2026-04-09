@@ -69,7 +69,7 @@ class Questions{
                 q.add(new Pair(front.node.right, front.dist + 1));
             }
         }
-        // fill answer from sorted map
+        // fill answer from sorted map+
         for (int val : map.values()) {
             ans.add(val);
         }

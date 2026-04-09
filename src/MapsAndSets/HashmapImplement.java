@@ -1,5 +1,7 @@
 package MapsAndSets;
 
+
+
 import java.util.*;
 
 class TreeNode{
@@ -76,6 +78,100 @@ class Questions{
         }
         return ans;
     }
+    public static void levelOrderTraversalBFS(TreeNode root) {
+        if (root == null) return;
+
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+
+        while (!q.isEmpty()) {
+            TreeNode current = q.remove();
+            System.out.println(current.val);
+
+            if (current.left != null) q.add(current.left);
+            if (current.right != null) q.add(current.right);
+        }
+    }
+    public int amountOfTime(TreeNode root, int start) {
+        if (root == null) return 0;
+
+        // 🔹 Step 1: Build parent map + find start node
+        HashMap<TreeNode, TreeNode> parent = new HashMap<>();
+        Queue<TreeNode> q = new LinkedList<>();
+
+        q.add(root);
+        TreeNode startNode = null;
+
+        // Standard BFS traversal
+        while (!q.isEmpty()) {
+            TreeNode current = q.remove();
+
+            // 🎯 Capture the start node
+            if (current.val == start) {
+                startNode = current;
+            }
+
+            // 🔗 Map left child → parent
+            if (current.left != null) {
+                parent.put(current.left, current);
+                q.add(current.left);
+            }
+
+            // 🔗 Map right child → parent
+            if (current.right != null) {
+                parent.put(current.right, current);
+                q.add(current.right);
+            }
+        }
+
+        // 🔹 Step 2: BFS to simulate infection spread
+        HashSet<TreeNode> visited = new HashSet<>();
+        q.clear(); // reuse queue
+
+        // Start infection from startNode
+        q.add(startNode);
+        visited.add(startNode);
+
+        int time = 0;
+
+        // 🔥 BFS level by level (each level = 1 minute)
+        while (!q.isEmpty()) {
+            int size = q.size();
+            boolean spread = false; // track if infection spreads this minute
+
+            for (int i = 0; i < size; i++) {
+                TreeNode current = q.remove();
+
+                // 🔥 Spread to LEFT child
+                if (current.left != null && !visited.contains(current.left)) {
+                    visited.add(current.left);
+                    q.add(current.left);
+                    spread = true;
+                }
+
+                // 🔥 Spread to RIGHT child
+                if (current.right != null && !visited.contains(current.right)) {
+                    visited.add(current.right);
+                    q.add(current.right);
+                    spread = true;
+                }
+
+                // 🔥 Spread to PARENT
+                TreeNode p = parent.get(current);
+                if (p != null && !visited.contains(p)) {
+                    visited.add(p);
+                    q.add(p);
+                    spread = true;
+                }
+            }
+
+            // ⏱️ Increase time only if infection spread
+            if (spread) time++;
+        }
+
+        return time;
+    }
+
 }
 
 public class HashmapImplement {

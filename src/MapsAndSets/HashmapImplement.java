@@ -168,6 +168,42 @@ class Questions{
 
         return time;
     }
+    int maxDepth = 0;
+
+    public int amountOfTimeAlter(TreeNode root, int start) {
+        solve(root, start);
+        return maxDepth;
+    }
+
+    public int solve(TreeNode root, int start)
+    {
+        int d = 0;
+
+        if (root == null)
+        {
+            return d;
+        }
+
+        int l = solve(root.left, start);
+        int r = solve(root.right, start);
+
+        if (root.val == start)
+        {
+            maxDepth = Math.max(l, r);
+            d = -1;
+        }
+        else if (l >= 0 && r >= 0)
+        {
+            d = Math.max(l, r) + 1;
+        }
+        else
+        {
+            maxDepth = Math.max(maxDepth, Math.abs(l) + Math.abs(r));
+            d = Math.min(l, r) - 1;
+        }
+
+        return d;
+    }
 
 }
 

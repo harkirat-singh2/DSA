@@ -346,15 +346,28 @@ public class HashmapImplement {
         return -1; // if no majority element
     }
 
-    public int[] topKFrequent(int[] nums, int k) {
-        int[] arr = new int[k];
+    int[] topKFrequent(int[] nums, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < arr.length; i++) {
-            map.put(arr[i], map.getOrDefault(arr[i], 0) + 1);
 
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
         }
-        return arr;
+
+        List<Map.Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
+
+        list.sort((a, b) -> b.getValue() - a.getValue()); // descending
+
+        int[] res = new int[k];
+        for (int i = 0; i < k; i++) {
+            res[i] = list.get(i).getKey();
+        }
+
+        return res;
     }
+//
+//    public String frequencySort(String s) {
+//
+//    }
 
     public static void main(String[] args) {
         HashmapImplement hmap = new HashmapImplement();

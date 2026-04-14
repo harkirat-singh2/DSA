@@ -120,6 +120,16 @@ class Linkedlist{  // User Defined Data Structure
          return dummy.next;
     }
 
+    public Node oddEvenList(Node head) {
+        Node odd = head;
+        Node even = head.next;
+        Node evenHead = even;
+        while (even!=null && even.next!=null){
+
+        }
+        return  head;
+    }
+
 }
 
 

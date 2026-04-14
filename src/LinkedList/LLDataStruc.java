@@ -15,7 +15,8 @@ class Linkedlist{  // User Defined Data Structure
 
         if (tail == null){
             head = tail = temp;
-        } else {
+        }
+        else {
             tail.next = temp;
             tail = temp;
         }

@@ -40,6 +40,39 @@ class Practice{
         }
         return temp;
     }
+
+    public Node removeNthFromEnd(Node head, int n) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node fast = dummy;
+        Node slow = dummy;
+        for (int i = 0; i<n;i++){
+            fast = fast.next;
+        }
+        while (fast.next!=null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return dummy.next;
+    }
+
+    public Node oddEvenList(Node head) {
+        Node odd = head;
+        Node even = head.next;
+        Node evenHead = even;
+
+        while (even!=null && even.next!=null){
+            odd.next = even.next;
+            odd=odd.next;
+
+            even.next = odd.next;
+            even = even.next;
+        }
+        odd.next = evenHead;
+
+        return  head;
+    }
 }
 
 public class Questions {

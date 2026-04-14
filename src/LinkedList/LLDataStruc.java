@@ -105,6 +105,7 @@ class Linkedlist{  // User Defined Data Structure
     }
 }
 
+
 public class LLDataStruc {
     public static void main(String[] args) {
         Linkedlist ll = new Linkedlist();

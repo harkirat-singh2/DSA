@@ -41,6 +41,19 @@ class Practice{
         return temp;
     }
 
+    Node middleNodeSlowAndFast(Node head){
+        if (head == null || head.next == null) {
+            return null;
+        }
+        Node fast = head;
+        Node slow = head;
+        while (fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return head;
+    }
+
     public Node removeNthFromEnd(Node head, int n) {
         Node dummy = new Node(0);
         dummy.next = head;
@@ -55,6 +68,21 @@ class Practice{
         }
         slow.next = slow.next.next;
         return dummy.next;
+    }
+
+    public Node KthFromEnd(Node head, int n) {
+        Node fast = head;
+        Node slow = head;
+        for (int i = 0; i<n;i++){
+            if (fast==null) return null;
+            fast = fast.next;
+        }
+        while (fast.next!=null){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;
+        return head;
     }
 
     public Node oddEvenList(Node head) {
@@ -72,6 +100,71 @@ class Practice{
         odd.next = evenHead;
 
         return  head;
+    }
+
+    public Node deleteMiddle(Node head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        Node slow = head;
+        Node fast = head;
+        Node prev = null;
+
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // delete middle
+        prev.next = slow.next;
+
+        return head;
+    }
+
+    public Node getIntersectionNode(Node headA, Node headB) {
+        int lengthA = 0;
+        int lengthB = 0;
+
+        Node tempA = headA;
+        Node tempB = headB;
+
+        // Count length of A
+        while (tempA != null) {
+            tempA = tempA.next;
+            lengthA++;
+        }
+
+        // Count length of B
+        while (tempB != null) {
+            tempB = tempB.next;
+            lengthB++;
+        }
+
+        Node fastA = headA;
+        Node fastB = headB;
+
+        // Align both lists
+        if (lengthA > lengthB) {
+            int diff = lengthA - lengthB;
+            for (int i = 0; i < diff; i++) {
+                fastA = fastA.next;
+            }
+        } else {
+            int diff = lengthB - lengthA;
+            for (int i = 0; i < diff; i++) {
+                fastB = fastB.next;
+            }
+        }
+
+        // Move together
+        while (fastA != fastB) {
+            fastA = fastA.next;
+            fastB = fastB.next;
+        }
+
+        return fastA; // intersection node or null
     }
 }
 

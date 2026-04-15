@@ -161,6 +161,7 @@ class Practice{
         // Move together
         while (fastA != fastB) {
             fastA = fastA.next;
+
             fastB = fastB.next;
         }
 

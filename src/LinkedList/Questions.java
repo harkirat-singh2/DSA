@@ -170,6 +170,7 @@ class Practice{
 
 public class Questions {
     public static void main(String[] args) {
+
         Practice ll = new Practice();
 
         ll.addAtTail(10);

@@ -173,6 +173,7 @@ public class Questions {
         Practice ll = new Practice();
 
         ll.addAtTail(10);
+
         ll.addAtTail(20);
         ll.addAtTail(30);
         ll.addAtTail(40);

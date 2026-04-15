@@ -177,6 +177,7 @@ public class Questions {
         ll.addAtTail(20);
 
         ll.addAtTail(30);
+
         ll.addAtTail(40);
 
     }

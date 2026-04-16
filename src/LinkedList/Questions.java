@@ -117,6 +117,7 @@ class Practice{
             prev = slow;
 
             slow = slow.next;
+
             fast = fast.next.next;
         }
 

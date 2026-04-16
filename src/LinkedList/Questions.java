@@ -108,6 +108,7 @@ class Practice{
         }
 
         Node slow = head;
+
         Node fast = head;
         Node prev = null;
 

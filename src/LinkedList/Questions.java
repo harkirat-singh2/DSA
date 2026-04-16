@@ -115,6 +115,7 @@ class Practice{
 
         while (fast != null && fast.next != null) {
             prev = slow;
+
             slow = slow.next;
             fast = fast.next.next;
         }

@@ -102,7 +102,7 @@ class Practice{
         return  head;
     }
 
-    public Node deleteMiddle(Node head) {
+    public Node deleteMiddleSecond(Node head) {
         if (head == null || head.next == null) {
             return null;
         }

@@ -224,6 +224,42 @@ class Practice{
         }
         return false;
     }
+    public boolean hasCycle3XSpeed(Node head) {
+        Node fast = head;
+        Node slow = head;
+        while(fast!= null && fast.next!=null && fast.next.next!=null){
+            fast= fast.next.next.next;
+            slow = slow.next;
+            if (fast==slow) return true;
+        }
+        return false;
+    }
+
+    public Node hasCycle2(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        // Step 1: detect cycle
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                // Step 2: find cycle start
+                Node dummy = head;
+
+                while (dummy != slow) {
+                    dummy = dummy.next;
+                    slow = slow.next;
+                }
+
+                return dummy; // ✅ return start of cycle
+            }
+        }
+
+        return null; // ✅ no cycle
+    }
+
 }
 
 public class Questions {

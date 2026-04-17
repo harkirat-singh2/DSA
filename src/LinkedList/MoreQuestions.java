@@ -31,9 +31,9 @@ public class MoreQuestions {
         return head;
     }
 
-//    public Node deleteDuplicates(Node head) {
-//
-//    }
+    public Node deleteDuplicatesAgain(Node head) {
+        return head;
+    }
 
     public static void main(String[] args) {
 

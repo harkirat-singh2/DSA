@@ -129,7 +129,7 @@ class Practice{
         }
 
         Node slow = head;
-        Node fast = head;
+        Node fast = head.next;
         Node prev = null;
 
         while (fast != null && fast.next != null) {

@@ -51,7 +51,7 @@ class Practice{
             slow = slow.next;
             fast = fast.next.next;
         }
-        return slow;
+        return head;
     }
 
     public Node removeNthFromEnd(Node head, int n) {
@@ -82,7 +82,7 @@ class Practice{
             slow = slow.next;
         }
         slow.next = slow.next.next;
-        return head;
+        return slow;
     }
 
     public Node oddEvenList(Node head) {

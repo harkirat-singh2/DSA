@@ -123,6 +123,27 @@ class Practice{
         return head;
     }
 
+    public Node deleteMiddleFirst(Node head) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+
+        Node slow = head;
+        Node fast = head;
+        Node prev = null;
+
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // delete middle
+        prev.next = slow.next;
+
+        return head;
+    }
+
     public Node getIntersectionNode(Node headA, Node headB) {
         int lengthA = 0;
         int lengthB = 0;

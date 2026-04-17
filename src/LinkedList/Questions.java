@@ -81,7 +81,6 @@ class Practice{
             fast = fast.next;
             slow = slow.next;
         }
-        slow.next = slow.next.next;
         return slow;
     }
 
@@ -188,6 +187,33 @@ class Practice{
 
         return fastA; // intersection node or null
     }
+
+    public Node swapNodes(Node head, int k) {
+        Node first = head;
+        Node second = head;
+        Node temp = head;
+
+        // Move to k-th node from start
+        for (int i = 1; i < k; i++) {
+            first = first.next;
+        }
+
+        temp = first;
+
+        // Find k-th node from end
+        while (temp.next != null) {
+            temp = temp.next;
+            second = second.next;
+        }
+
+        // Swap values
+        int val = first.val;
+        first.val = second.val;
+        second.val = val;
+
+        return head;
+    }
+
 }
 
 public class Questions {

@@ -51,7 +51,7 @@ class Practice{
             slow = slow.next;
             fast = fast.next.next;
         }
-        return head;
+        return slow;
     }
 
     public Node removeNthFromEnd(Node head, int n) {

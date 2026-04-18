@@ -31,7 +31,8 @@ public class MoreQuestions {
         return head;
     }
 
-    public Node deleteDuplicatesAgain(Node head) {
+    public Node deleteDuplicatesEntireVal(Node head) {
+
         return head;
     }
 

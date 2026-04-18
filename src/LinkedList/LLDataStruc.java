@@ -104,8 +104,6 @@ class Linkedlist{  // User Defined Data Structure
         size--;
     }
 
-
-
 }
 
 

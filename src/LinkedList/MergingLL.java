@@ -30,8 +30,8 @@ public class MergingLL {
         Node slow = head;
         Node fast = head;
         while(fast.next!=null &&fast.next.next!=null){
-                slow= slow.next;
-                fast = fast.next.next;
+            slow= slow.next;
+            fast = fast.next.next;
         }
         Node head2 = slow.next;
         slow.next = null;

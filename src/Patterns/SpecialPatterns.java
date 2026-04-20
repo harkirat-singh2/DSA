@@ -86,6 +86,8 @@ public class SpecialPatterns {
         }
     }
 
+
+
     public static void main(String[] args) {
     chudaapTriangle(5);
     }

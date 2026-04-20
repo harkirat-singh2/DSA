@@ -4,6 +4,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+ class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+
 public class MergingLL {
 
     public Node mergeTwoLists(Node listA, Node listB) {
@@ -139,7 +147,7 @@ public class MergingLL {
         return dummy.next;
     }
 
-    public Node reverseList(Node head) {
+    public Node reverseListWithArrayList(Node head) {
         Node temp = head;
         ArrayList<Node> arr = new ArrayList<>();
        while (temp!=null){
@@ -152,6 +160,18 @@ public class MergingLL {
         }
         arr.get(0).next = null;
         return arr.get(n-1);
+    }
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode fwd = head;
+        while (curr!=null){
+            fwd = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = fwd;
+        }
+        return prev;
     }
 
     public static void main(String[] args) {

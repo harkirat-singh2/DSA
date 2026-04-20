@@ -70,7 +70,7 @@ public class MergingLL {
                 small = small.next;
             }
             else {
-                large.next = large;
+                large.next = curr;
                 large = large.next;
 
             }
@@ -103,16 +103,18 @@ public class MergingLL {
                 equal = equal.next;
 
             } else {
-                large.next = large;
+                large.next = curr;
                 large = large.next;
 
             }
             curr = curr.next;
         }
         large.next = null;
-        small.next = largeDummy.next;
+        equal.next = null;
+        small.next = equalDummy.next;
+        equal.next = largeDummy.next;
         return  smallDummy.next;
-    }
+
 
     }
 

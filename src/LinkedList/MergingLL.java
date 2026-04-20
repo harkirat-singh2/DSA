@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class MergingLL {
 
     public Node mergeTwoLists(Node listA, Node listB) {
@@ -38,6 +41,79 @@ public class MergingLL {
         Node head1 = sortList(head);
         Node head3 = sortList(head2);
         return mergeTwoLists(head1,head3);
+    }
+
+//    public int firstMissingPositive(int[] arr) {
+//        Arrays.sort(arr);
+//        int low = 0;
+//        int n= arr.length;
+//        int high = n-1;
+//        int mid = (low + high)/2;
+//        int x;
+//        while (low<high){
+//
+//    }
+//}
+
+    public Node partition(Node head, int x) {
+        Node smallDummy = new Node(0);
+        Node largeDummy = new Node(0);
+
+        Node small = smallDummy;
+        Node large = largeDummy;
+
+        Node curr = head;
+
+        while (curr!=null ){
+            if (curr.val<x){
+                small.next = curr;
+                small = small.next;
+            }
+            else {
+                large.next = large;
+                large = large.next;
+
+            }
+            curr = curr.next;
+        }
+        large.next = null;
+        small.next = largeDummy.next;
+        return  smallDummy.next;
+    }
+
+    public static Node partitionWithEqual(Node head, int x) {
+        Node smallDummy = new Node(0);
+        Node largeDummy = new Node(0);
+        Node equalDummy = new Node(0);
+
+        Node small = smallDummy;
+        Node large = largeDummy;
+        Node equal = equalDummy;
+
+
+        Node curr = head;
+
+        while (curr!=null ){
+            if (curr.val<x){
+                small.next = curr;
+                small = small.next;
+            }
+            else if (curr.val==x) {
+                equal.next = curr;
+                equal = equal.next;
+
+            } else {
+                large.next = large;
+                large = large.next;
+
+            }
+            curr = curr.next;
+        }
+        large.next = null;
+        small.next = largeDummy.next;
+        return  smallDummy.next;
+    }
+
     }
 
     public static void main(String[] args) {

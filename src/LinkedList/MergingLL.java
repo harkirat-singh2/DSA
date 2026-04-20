@@ -114,9 +114,9 @@ public class MergingLL {
         small.next = equalDummy.next;
         equal.next = largeDummy.next;
         return  smallDummy.next;
-
-
     }
+
+
 
     public static void main(String[] args) {
 

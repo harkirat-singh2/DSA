@@ -184,10 +184,26 @@ public class MergingLL {
 
         return newHead;
     }
-//
-//    public boolean isPalindrome(ListNode head) {
-//
-//    }
+
+
+
+    public boolean isPalindrome(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+        while (fast!=null || fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        ListNode a =  reverseList(slow);
+
+        ListNode b = head;
+        while (a != null) {
+            if (b.val != a.val) return false;
+            b = b.next;
+            a = a.next;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
 

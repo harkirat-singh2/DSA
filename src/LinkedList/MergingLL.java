@@ -174,6 +174,21 @@ public class MergingLL {
         return prev;
     }
 
+    public Node reverseListRecursion(Node head) {
+        if (head == null || head.next == null) return head;
+
+        Node newHead = reverseListRecursion(head.next);
+
+        head.next.next = head; // reverse link
+        head.next = null;      // break original link
+
+        return newHead;
+    }
+//
+//    public boolean isPalindrome(ListNode head) {
+//
+//    }
+
     public static void main(String[] args) {
 
     }

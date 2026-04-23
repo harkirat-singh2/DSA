@@ -201,6 +201,7 @@ public class MergingLL {
             if (b.val != a.val) return false;
             b = b.next;
             a = a.next;
+
         }
         return true;
     }

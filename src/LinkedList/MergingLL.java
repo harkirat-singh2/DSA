@@ -219,6 +219,7 @@ public class MergingLL {
         int maxTwin = 0;
         while (second != null) {
             maxTwin = Math.max(maxTwin,first.val+ second.val);
+
             first = first.next;
 
             second = second.next;

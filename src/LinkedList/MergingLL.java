@@ -260,6 +260,17 @@ public class MergingLL {
         return odd.next;
     }
 
+    public ListNode swapPairs(ListNode head){
+        ListNode dummy = new ListNode(0);
+        ListNode c = dummy;
+        ListNode a = head;
+        ListNode b = head.next;
+        while (b!=null){
+
+        }
+        return dummy.next;
+    }
+
     public static void main(String[] args) {
 
     }

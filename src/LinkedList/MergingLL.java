@@ -286,19 +286,24 @@ public class MergingLL {
     }
 
     public void reorderList(ListNode head) {
+        if (head == null || head.next == null) return ;
         ListNode slow  = head;
         ListNode fast = head;
         while (fast!=null && fast.next!=null){
             slow = slow.next;
             fast= fast.next.next;
         }
-
-        ListNode second =  reverseList(slow);
+        ListNode second =  reverseList(slow.next);
+        slow.next = null;
         ListNode first = head;
         while (second!=null){
-            first.next = second.next;
-            first = first.next;
-            second = second.next;
+            ListNode storeFirst = first.next;
+            ListNode storeSecond = second.next;
+            first.next = second;
+            second.next =storeFirst;
+            first= storeFirst;
+           second = storeSecond;
+
         }
     }
 

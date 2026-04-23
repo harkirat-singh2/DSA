@@ -227,18 +227,37 @@ public class MergingLL {
         return maxTwin;
     }
 
-    public ListNode oddEvenList(ListNode head){
-        ListNode dummy1 = new ListNode();
-        ListNode dummy2 = new ListNode();
-        ListNode d1 = dummy1;
-        ListNode d2 = dummy1;
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null) return null;
+
+        ListNode odd = new ListNode(0);
+        ListNode even = new ListNode(0);
+
+        ListNode o = odd;
+        ListNode e = even;
         ListNode t = head;
-        while (t!=null){
-            d1 = t;
+
+        while (t != null) {
+            // odd
+            o.next = t;
+            o = o.next;
             t = t.next;
 
+            // even
+            if (t != null) {
+                e.next = t;
+                e = e.next;
+                t = t.next;
+            }
         }
 
+        // IMPORTANT: terminate even list
+        e.next = null;
+
+        // connect odd → even
+        o.next = even.next;
+
+        return odd.next;
     }
 
     public static void main(String[] args) {

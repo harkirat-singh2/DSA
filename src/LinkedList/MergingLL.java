@@ -266,7 +266,12 @@ public class MergingLL {
         ListNode a = head;
         ListNode b = head.next;
         while (b!=null){
-
+            c.next = b;
+            a.next = b.next;
+            b.next = a;
+            c= a;
+            a=a.next;
+            b= a.next;
         }
         return dummy.next;
     }

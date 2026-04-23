@@ -206,6 +206,27 @@ public class MergingLL {
         return true;
     }
 
+    public int pairSum(ListNode head) {
+        ListNode slow  = head;
+        ListNode fast = head;
+        while (fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast= fast.next.next;
+        }
+
+        ListNode second =  reverseList(slow);
+        ListNode first = head;
+        int maxTwin = 0;
+        while (second != null) {
+            maxTwin = Math.max(maxTwin,first.val+ second.val);
+            first = first.next;
+            second = second.next;
+        }
+        return maxTwin;
+    }
+
+
+
     public static void main(String[] args) {
 
     }

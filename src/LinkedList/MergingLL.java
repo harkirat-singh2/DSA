@@ -260,20 +260,46 @@ public class MergingLL {
         return odd.next;
     }
 
-    public ListNode swapPairs(ListNode head){
+    public ListNode swapPairs(ListNode head) {
+        if (head == null || head.next == null) return head;
+
         ListNode dummy = new ListNode(0);
+        dummy.next = head;
+
         ListNode c = dummy;
         ListNode a = head;
         ListNode b = head.next;
-        while (b!=null){
+
+        while (a != null && b != null) {
             c.next = b;
             a.next = b.next;
             b.next = a;
-            c= a;
-            a=a.next;
-            b= a.next;
+
+            // move pointers
+            c = a;
+            a = a.next;
+
+            if (a != null) b = a.next;
         }
+
         return dummy.next;
+    }
+
+    public void reorderList(ListNode head) {
+        ListNode slow  = head;
+        ListNode fast = head;
+        while (fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast= fast.next.next;
+        }
+
+        ListNode second =  reverseList(slow);
+        ListNode first = head;
+        while (second!=null){
+            first.next = second.next;
+            first = first.next;
+            second = second.next;
+        }
     }
 
     public static void main(String[] args) {

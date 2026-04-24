@@ -91,6 +91,30 @@ public class MoreQuestions {
         return sum;
     }
 
+    public ListNode removeNodes(ListNode head){
+        Stack<ListNode> st = new Stack<>();
+        ListNode temp = head;
+        while (temp!=null){
+            while (!st.isEmpty() && st.peek().val < temp.val) {
+                st.pop();
+            }
+            st.push(temp);
+            temp = temp.next;
+        }
+        ListNode newHead = null;
+
+        while (!st.isEmpty()) {
+            ListNode node = st.pop();
+            node.next = newHead;
+            newHead = node;
+        }
+        return newHead;
+    }
+//    public ListNode removeNodesByReverse(ListNode head){
+//
+//
+//    }
+
     public static void main(String[] args) {
 
     }

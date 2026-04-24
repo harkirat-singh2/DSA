@@ -63,28 +63,31 @@ public class MoreQuestions {
         return sb.reverse().toString();
     }
 
-    public int calPoints(String[] arr){
+    public int calPoints(String[] arr) {
         Stack<Integer> st = new Stack<>();
-        for (int i = 0; i < arr.length; i++) {
 
+        for (int i = 0; i < arr.length; i++) {
             String s = arr[i];
-            if (s=="C") st.pop();
-            if (s=="D") st.push(st.peek()*2);
-            if (s=="+"){
-                int top  = st.pop();
-                int secTop = st.pop();
-                st.push(secTop);
+
+            if (s.equals("C")) {
+                st.pop();
+            } else if (s.equals("D")) {
+                st.push(st.peek() * 2);
+            } else if (s.equals("+")) {
+                int top = st.pop();
+                int secTop = st.peek();
                 st.push(top);
-                st.push(secTop + top);
-            }
-            else {
+                st.push(top + secTop);
+            } else {
                 st.push(Integer.parseInt(s));
             }
         }
+
         int sum = 0;
-        while (st.isEmpty()){
+        while (!st.isEmpty()) {
             sum += st.pop();
         }
+
         return sum;
     }
 

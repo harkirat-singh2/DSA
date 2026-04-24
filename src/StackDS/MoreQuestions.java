@@ -63,7 +63,7 @@ public class MoreQuestions {
         return sb.reverse().toString();
     }
 
-    public int calPoints(String[] arr) {
+    public int baseballGame(String[] arr) {
         Stack<Integer> st = new Stack<>();
 
         for (int i = 0; i < arr.length; i++) {

@@ -12,7 +12,6 @@ class ListNode {
 }
 
 public class NodeRemovalQuestion {
-
     public ListNode removeNodes(ListNode head) {
 
         Stack<ListNode> st = new Stack<>();

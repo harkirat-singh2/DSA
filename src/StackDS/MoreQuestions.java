@@ -110,10 +110,10 @@ public class MoreQuestions {
         }
         return newHead;
     }
-//    public ListNode removeNodesByReverse(ListNode head){
-//
-//
-//    }
+    public ListNode removeNodesByReverse(ListNode head){
+
+
+    }
 
     public static void main(String[] args) {
 

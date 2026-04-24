@@ -40,7 +40,7 @@ public class MoreQuestions {
             }
         }
         StringBuilder sb = new StringBuilder();
-        while (st.isEmpty()){
+        while (!st.isEmpty()){
             sb.append(st.pop());
         }
         return sb.reverse().toString();

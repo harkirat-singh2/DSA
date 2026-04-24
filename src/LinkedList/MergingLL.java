@@ -308,10 +308,10 @@ public class MergingLL {
     }
 
 
-    public ListNode mergeKLists(ListNode[] lists) {
-        while (lists.length>1){
-        }
-    }
+//    public ListNode mergeKLists(ListNode[] lists) {
+//        while (lists.length>1){
+//        }
+//    }
 
     public static void main(String[] args) {
 

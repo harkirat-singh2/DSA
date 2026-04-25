@@ -131,6 +131,7 @@ public class MoreQuestions {
 
         while (curr!=null){
             if (curr.next.val < maxSoFar.val){
+
                 while (curr.next != null && curr.next.val < maxSoFar.val){
                     curr.next = curr.next.next;
                 }

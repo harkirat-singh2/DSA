@@ -98,6 +98,7 @@ public class MoreQuestions {
 
         while (temp!=null){
             while (!st.isEmpty() && st.peek().val < temp.val) {
+
                 st.pop();
             }
             st.push(temp);

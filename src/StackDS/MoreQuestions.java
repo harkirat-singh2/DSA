@@ -1,5 +1,6 @@
 package StackDS;
 
+import java.util.List;
 import java.util.Stack;
 
 
@@ -110,8 +111,36 @@ public class MoreQuestions {
         }
         return newHead;
     }
-    public ListNode removeNodesByReverse(ListNode head){
 
+    public ListNode reverseLL(ListNode head){
+        ListNode curr = head;
+        ListNode prev = null;
+        while (curr!=null){
+            ListNode temp  = curr.next;
+            curr.next=prev;
+            prev = curr;
+            curr = temp;
+        }
+        return prev;
+    }
+
+    public ListNode removeNodesByReverse(ListNode head){
+        head = reverseLL(head);
+        ListNode curr = head;
+        ListNode maxSoFar = head;
+
+        while (curr!=null){
+            if (curr.next.val < maxSoFar.val){
+                while (curr.next != null && curr.next.val < maxSoFar.val){
+                    curr.next = curr.next.next;
+                }
+            }
+            else{
+                maxSoFar.next = curr;
+                maxSoFar = maxSoFar.next;
+            }
+
+        }
 
     }
 

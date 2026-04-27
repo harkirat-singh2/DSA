@@ -10,6 +10,7 @@ public class MoreQuestions {
     static boolean sameStyle(char a, char b) {
 
         if (a == '[' && b == ']') return true;
+
         if (a == '{' && b == '}') return true;
         return a == '(' && b == ')';
     }

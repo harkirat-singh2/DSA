@@ -12,6 +12,7 @@ public class MoreQuestions {
         if (a == '[' && b == ']') return true;
 
         if (a == '{' && b == '}') return true;
+
         return a == '(' && b == ')';
     }
 

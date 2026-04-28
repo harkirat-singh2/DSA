@@ -131,26 +131,26 @@ public class MoreQuestions {
         return prev;
     }
 
-    public ListNode removeNodesByReverse(ListNode head){
-        head = reverseLL(head);
-        ListNode curr = head;
-        ListNode maxSoFar = head;
-
-        while (curr!=null){
-            if (curr.next.val < maxSoFar.val){
-
-                while (curr.next != null && curr.next.val < maxSoFar.val){
-                    curr.next = curr.next.next;
-                }
-            }
-            else{
-                maxSoFar.next = curr;
-                maxSoFar = maxSoFar.next;
-            }
-
-        }
-
-    }
+//    public ListNode removeNodesByReverse(ListNode head){
+//        head = reverseLL(head);
+//        ListNode curr = head;
+//        ListNode maxSoFar = head;
+//
+//        while (curr!=null){
+//            if (curr.next.val < maxSoFar.val){
+//
+//                while (curr.next != null && curr.next.val < maxSoFar.val){
+//                    curr.next = curr.next.next;
+//                }
+//            }
+//            else{
+//                maxSoFar.next = curr;
+//                maxSoFar = maxSoFar.next;
+//            }
+//
+//        }
+//
+//    }
 
     public static void main(String[] args) {
 

@@ -5,6 +5,15 @@ import java.util.List;
 import java.util.Stack;
 
 
+class Pair{
+    int val;
+    int idx;
+    Pair(int val , int idx){
+        this.val = val;
+        this.idx = idx;
+    }
+}
+
 
 public class MoreQuestions {
 
@@ -192,6 +201,87 @@ public class MoreQuestions {
 //        }
 //
 //    }
+
+    public  ArrayList<Integer> calculateSpanWithPair(int[] arr){
+        int n= arr.length;
+        int[] span = new int[n];
+        Stack<Pair> st = new Stack<>();
+        span[0] = 1;
+        Pair p = new Pair(arr[0],0);
+        st.push(p);
+        for (int i = 1; i < n; i++) {
+            while (!st.isEmpty() && st.peek().val<arr[i]) st.pop();
+            if (st.isEmpty()) span[i] = i+1;
+            else{
+                span[i] = i-st.peek().idx;
+            }
+            st.push(new Pair(arr[i],i));
+        }
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < span.length; i++) {
+            ans.add(span[i]);
+        }
+        return ans;
+    }
+
+    public  ArrayList<Integer> calculateSpan(int[] arr){
+        int n= arr.length;
+        int[] span = new int[n];
+        Stack<Integer> st = new Stack<>();
+        span[0] = 1;
+        st.push(0);
+        for (int i = 1; i < n; i++) {
+            while (!st.isEmpty() && arr[st.peek()]<arr[i]) st.pop();
+            if (st.isEmpty()) span[i] = i+1;
+            else{
+                span[i] = i-st.peek();
+            }
+            st.push(i);
+        }
+        ArrayList<Integer> ans = new ArrayList<>();
+        for (int i = 0; i < span.length; i++) {
+            ans.add(span[i]);
+        }
+        return ans;
+    }
+
+    public int celebrity(int[][] arr) {
+        int n = arr.length;
+        Stack<Integer> st = new Stack<>();
+
+        // Step 1: push all
+        for (int i = 0; i < n; i++) {
+            st.push(i);
+        }
+
+        // Step 2: eliminate
+        while (st.size() > 1) {
+            int a = st.pop();
+            int b = st.pop();
+
+            if (arr[a][b] == 1) {
+                // a knows b → a not celeb
+                st.push(b);
+            } else {
+                // a does NOT know b → b not celeb
+                st.push(a);
+            }
+        }
+
+        // Step 3: potential celeb
+        int celeb = st.pop();
+
+        // Step 4: verify
+        for (int i = 0; i < n; i++) {
+            if (i != celeb && arr[i][celeb] == 0) return -1;
+        }
+
+        for (int j = 0; j < n; j++) {
+            if (j != celeb && arr[celeb][j] == 1) return -1;
+        }
+
+        return celeb;
+    }
 
     public static void main(String[] args) {
 

@@ -10,7 +10,6 @@ class ListNode {
         this.val = val;
     }
 }
-
 public class NodeRemovalQuestion {
     public ListNode removeNodes(ListNode head) {
 
@@ -25,7 +24,6 @@ public class NodeRemovalQuestion {
             st.push(temp);
             temp = temp.next;
         }
-
         // Step 2: Rebuild list
         ListNode newHead = null;
 

@@ -336,6 +336,7 @@ public class MoreQuestions {
         int[] pse =  new int[n];
         pse[0] = -1;
         st.push(0);
+
         for (int i = 0; i < n; i++) {
             while(!st.isEmpty() && arr[st.peek()]>=arr[i]) st.pop();
             if (st.isEmpty()) pse[i] = -1;

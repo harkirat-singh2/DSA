@@ -283,6 +283,38 @@ public class MoreQuestions {
         return celeb;
     }
 
+
+
+        public int[] canSeePersonsCount(int[] heights) {
+            int n = heights.length;
+            int[] ans = new int[n];
+            Stack<Integer> st = new Stack<>();
+
+            // Iterate from right to left
+            for (int i = n - 1; i >= 0; i--) {
+                int count = 0;
+
+                // While the stack isn't empty AND the current person is taller than the person on top of the stack
+                while (!st.isEmpty() && heights[i] > st.peek()) {
+                    st.pop(); // The current person blocks anyone to their left from seeing this shorter person
+                    count++;  // The current person can see this shorter person
+                }
+
+                // If there is still someone on the stack, they must be taller than the current person.
+                // The current person can see them, but no one behind them.
+                if (!st.isEmpty()) {
+                    count++;
+                }
+
+                ans[i] = count;
+
+                // Push the current person onto the stack so people to their left can potentially see them
+                st.push(heights[i]);
+            }
+
+            return ans;
+        }
+
     public static void main(String[] args) {
 
     }

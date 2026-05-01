@@ -329,6 +329,7 @@ public class MoreQuestions {
             else nse[i] = st.peek();
             st.push(i);
         }
+
         while (!st.isEmpty()){
             st.pop();
         }

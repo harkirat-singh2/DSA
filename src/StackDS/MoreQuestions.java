@@ -319,6 +319,7 @@ public class MoreQuestions {
     public int largestRectangleArea(int[] arr) {
         int n = arr.length;
         int[] nse = new int[n];
+
         nse[n-1] = n;
         Stack<Integer> st = new Stack<>();
         st.push(n-1);

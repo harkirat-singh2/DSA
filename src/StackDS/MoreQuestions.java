@@ -328,6 +328,7 @@ public class MoreQuestions {
             while(!st.isEmpty() && arr[st.peek()]>=arr[i]) st.pop();
 
             if (st.isEmpty()) nse[i] = n;
+
             else nse[i] = st.peek();
             st.push(i);
         }

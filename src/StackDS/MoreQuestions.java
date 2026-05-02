@@ -351,6 +351,7 @@ public class MoreQuestions {
         int maxArea = 0;
         for (int i = 1; i < n; i++) {
             int area = arr[i] * (nse[i]-pse[i]-1);
+
             maxArea = Math.max(maxArea,area);
         }
         return maxArea;

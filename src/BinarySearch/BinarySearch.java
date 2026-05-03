@@ -202,6 +202,7 @@ public class BinarySearch {
         System.out.println(findFloor(arr1,9));
 
         System.out.println(Arrays.toString(firstAndLastOccurasc(arr1,5)));
+
         System.out.println(peakIndexInMountainArray(arr1));
 
     }

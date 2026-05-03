@@ -142,6 +142,7 @@ public class BinarySearch {
         return new int[]{last, first};
     }
     public static int peakIndexInMountainArray(int[] arr) {
+
         int n=arr.length;
         int low=0 , high=n-1;
         while (low<high){

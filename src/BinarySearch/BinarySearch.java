@@ -196,6 +196,7 @@ public class BinarySearch {
         int[] arr2 = {9,9,8,8,7,7,7,7,4,4,4,1,1};
 
         System.out.println(Arrays.toString(firstAndLastOccurDesc(arr2, 7)));
+
         System.out.println(firstAndLastOccurascArrayList(arr1,8));
         System.out.println(findFloor(arr1,9));
         System.out.println(Arrays.toString(firstAndLastOccurasc(arr1,5)));

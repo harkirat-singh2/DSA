@@ -16,6 +16,7 @@ public class arrRec {
         if (idx==arr.length) return false;
 
         if (arr[idx]==el) return true;
+
        return exists(arr ,el,idx+1);
     }
 

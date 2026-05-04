@@ -8,6 +8,7 @@ public class arrRec {
     }
     public static void revarrayyy(int[] arr,int idx){
         if (idx==arr.length) return;
+
         revarrayyy(arr , idx+1);
         System.out.println(arr[idx]);
     }

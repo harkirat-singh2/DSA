@@ -34,6 +34,7 @@ public class arrRec {
         }
 
     public static void main(String[] args) {
+
         int[] arr= {1,2,3,4,54,6,4,3,5,3};
         System.out.println(exists(arr, 7,8));    }
 }

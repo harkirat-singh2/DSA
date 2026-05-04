@@ -12,6 +12,7 @@ public class arrRec {
         System.out.println(arr[idx]);
     }
     public static boolean exists(int[] arr,int el,int idx){
+
         if (idx==arr.length) return false;
         if (arr[idx]==el) return true;
        return exists(arr ,el,idx+1);

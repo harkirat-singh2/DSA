@@ -2,6 +2,7 @@ package Rec;
 
 public class arrRec {
     public static void arrayyy(int[] arr,int idx){
+
         if (idx==arr.length) return;
         System.out.println(arr[idx]);
         arrayyy(arr , idx+1);

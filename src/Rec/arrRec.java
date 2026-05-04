@@ -10,6 +10,7 @@ public class arrRec {
         if (idx==arr.length) return;
 
         revarrayyy(arr , idx+1);
+
         System.out.println(arr[idx]);
     }
     public static boolean exists(int[] arr,int el,int idx){

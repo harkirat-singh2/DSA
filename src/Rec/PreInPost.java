@@ -8,6 +8,7 @@ public class PreInPost {
         System.out.print(n + " ");
 
         pip(n - 1);
+
         System.out.print(n + " ");
         pip(n - 1);
         System.out.print(n + " ");

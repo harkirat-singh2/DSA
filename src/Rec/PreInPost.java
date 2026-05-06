@@ -19,6 +19,7 @@ public class PreInPost {
         pip(3);
         System.out.println();
         System.out.println();
+        System.out.println();
 
 
 
